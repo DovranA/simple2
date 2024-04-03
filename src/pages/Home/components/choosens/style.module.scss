@@ -1,0 +1,47 @@
+.container{
+    width: 100%;
+    height: 50vh;
+
+    nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        button{
+            background: white;
+            font-weight: 600;
+            border: 1px solid gray;
+            padding: 0.3rem;
+            border-radius: 0.4rem;
+        }
+    }
+    .cards{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.card{
+    width: 16vw;
+    height: 40vh;
+    border: 1px solid black;
+    border-radius: 0.6rem;
+    position: relative;
+    span{
+        position: absolute;
+        background: white;
+        top: 10px;
+        left: 10px;
+        display: flex;
+        padding: 0.2rem;
+        border-radius: 0.4rem;
+        color: black;
+    }
+    img{
+        width: 100%;
+        height: 100%;
+    border-radius: 0.6rem;
+        object-fit: cover;
+    }
+}
