@@ -5,6 +5,7 @@ import "./App.css";
 import SharedLayout from "./pages/SharedLayout";
 import Home from "./pages/Home";
 import About from "./pages/about";
+import Videos from "./pages/Videos";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<Home />} />
+          <Route path="/videos" element={<Videos />} />
           <Route path="/about" element={<About />} />
         </Route>
       </Routes>

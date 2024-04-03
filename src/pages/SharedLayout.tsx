@@ -4,8 +4,16 @@ import Footer from "../components/Footer";
 
 const SharedLayout = () => {
   return (
-    <div style={{ overflow: "hidden" }}>
+    <div
+      style={{
+        overflow: "hidden",
+        display: "flex",
+        flexDirection: "column",
+        minHeight: "100vh",
+      }}
+    >
       <Navbar />
+
       <Outlet />
       <Footer />
     </div>
