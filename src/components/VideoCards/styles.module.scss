@@ -1,0 +1,21 @@
+.content{
+    nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        div{
+            display: flex;
+            gap: 8px;
+            button{
+                border: none;
+                background: white;
+                padding: 0.2rem 0.2rem 0.1rem 0.2rem;
+                border-radius: 0.2rem;
+            }
+            .active{
+                background: #000;
+
+            }
+        }
+    }
+}
