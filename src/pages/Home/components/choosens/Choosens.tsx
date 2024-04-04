@@ -1,5 +1,5 @@
-import Card from "./card";
-import styles from "./style.module.scss";
+import Card from './card'
+import styles from './style.module.scss'
 const Choosens = () => {
   return (
     <div className={styles.container}>
@@ -13,9 +13,13 @@ const Choosens = () => {
         <Card />
         <Card />
         <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Choosens;
+export default Choosens

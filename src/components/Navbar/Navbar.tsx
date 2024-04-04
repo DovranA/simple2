@@ -1,22 +1,24 @@
-import styles from "./navbar.module.scss";
+import styles from './navbar.module.scss'
+import { logo } from '../../assets'
+import NotificationBtn from './NotificationBtn'
 const Navbar = () => {
   return (
     <nav className={styles.navbar}>
-      <h1>TM BIZ</h1>
+      <span>
+        <img src={logo} alt='logo' />
+      </span>
       <div className={styles.searchDiv}>
-        <input type="text" placeholder="Gozle" />
-        <i className="bi bi-search"></i>
+        <input type='text' placeholder='Gozle' />
+        <i className='bi bi-search'></i>
       </div>
       <div className={styles.right}>
-        <div className={styles.notificDiv}>
-          <i className="bi bi-bell"></i>
-        </div>
+        <NotificationBtn count={100} />
         <div className={styles.avatar}>
-          <img src="/card1.png" alt="" />
+          <img src='/card1.png' alt='' />
         </div>
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar
