@@ -43,3 +43,15 @@
 ::-webkit-scrollbar-corner {
   background: #000;
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 12vh 5vw 5vh 5vw;
+  gap: 30px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
