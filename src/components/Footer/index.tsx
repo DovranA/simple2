@@ -44,5 +44,15 @@ const Footer = () => {
     </div>
   );
 };
+=======
+import styles from './style.module.scss'
+import appStore from '../../assets/appStore.png'
+import playStore from '../../assets/playStore.png'
+import bigLogo from '../../assets/tmBiz.png'
+import { FaInstagram, FaTiktok, FaYoutube } from 'react-icons/fa'
+const Footer = () => {
+  return <div className={styles.footer}></div>
+}
+>>>>>>> bccca7c6ef05aa6fa0576580d78701c854d0a8b5
 
-export default Footer;
+export default Footer
