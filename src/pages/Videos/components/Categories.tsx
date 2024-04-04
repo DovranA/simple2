@@ -1,13 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import styles from "./styles.module.scss";
-import {
-  IoIosArrowBack,
-  IoIosArrowDropleft,
-  IoIosArrowForward,
-} from "react-icons/io";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 const Categories = () => {
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const wrapperRef = useRef(null);
+  const wrapperRef = useRef<any>(null);
 
   const handleScrollLeft = () => {
     if (wrapperRef.current) {
@@ -17,21 +12,9 @@ const Categories = () => {
 
   const handleScrollRight = () => {
     if (wrapperRef.current) {
-      //   wrapperRef.current.scrollLeft = wrapperRef.current.scrollWidth;
       wrapperRef.current.scrollBy({ left: 100, behavior: "smooth" }); // Scroll left by 100px smoothly
     }
   };
-
-  //   useEffect(() => {
-  //     if (
-  //       wrapperRef.current &&
-  //       wrapperRef.current.scrollWidth > wrapperRef.current.offsetWidth
-  //     ) {
-  //       setScrollPosition(
-  //         wrapperRef.current.scrollWidth - wrapperRef.current.offsetWidth
-  //       );
-  //     }
-  //   }, []);
 
   return (
     <div className={styles.categories}>
@@ -39,7 +22,7 @@ const Categories = () => {
         <IoIosArrowBack />
       </button>
       <div ref={wrapperRef} className={styles.wrapper}>
-        <span className={styles.btn}>
+        <span className={styles.activeBtn}>
           <p>Mebel we oy bezeg</p>
           <IoIosArrowForward />
         </span>
@@ -131,6 +114,11 @@ const Categories = () => {
       <button className={styles.moveBtns} onClick={() => handleScrollRight()}>
         <IoIosArrowForward />
       </button>
+      {/* <div className={styles.dropdown}>
+        <div className={styles.noCate}>
+          <h2>No Category</h2>
+        </div>
+      </div> */}
     </div>
   );
 };

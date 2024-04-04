@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import styles from "./style.module.scss";
 import { FaGooglePlay } from "react-icons/fa6";
 import { FaApple } from "react-icons/fa";
+import { IoIosArrowUp } from "react-icons/io";
 const Footer = () => {
   return (
     <div className={styles.footer}>
@@ -16,7 +17,11 @@ const Footer = () => {
           <Link to="about">Ulanys duzgunleri</Link>
         </div>
       </div>
-
+      <div className={styles.toTopBtn}>
+        <Link to="#top">
+          <IoIosArrowUp size={20} />
+        </Link>
+      </div>
       <div className={styles.under}>
         <h3>Mobil gosundyny yuklap alyn</h3>
         <div className={styles.links}>

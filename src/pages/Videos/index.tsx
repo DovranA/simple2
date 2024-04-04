@@ -1,11 +1,12 @@
 import TopLink from "../../components/TopLink/TopLink";
+import VideoCards from "../../components/VideoCards/VideoCards";
 import Categories from "./components/Categories";
-import styles from "./videos.module.scss";
 const Videos = () => {
   return (
     <div className="container">
       <TopLink location="Wideolar" />
       <Categories />
+      <VideoCards />
     </div>
   );
 };

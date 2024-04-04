@@ -28,8 +28,18 @@
             }
         }
     }
+    .toTopBtn{
+        margin-top: 1.5rem;
+        display: flex;
+        justify-content: end;
+        a{
+            background: white;
+            padding: 0.2rem 0.3rem 0.2rem 0.28rem;
+            border-radius: 0.2rem;
+        }
+    }
     .under{
-        margin-top: 2rem;
+        margin-top: 1.5rem;
         border-top: 2px solid rgb(176, 176, 176);
         display: flex;
         justify-content: space-between;
