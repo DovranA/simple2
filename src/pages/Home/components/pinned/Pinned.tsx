@@ -1,4 +1,4 @@
-import styles from "./style.module.scss";
+import styles from './style.module.scss'
 const Pinned = () => {
   return (
     <div className={styles.pinned}>
@@ -7,7 +7,7 @@ const Pinned = () => {
       </nav>
       <div></div>
     </div>
-  );
-};
+  )
+}
 
-export default Pinned;
+export default Pinned
