@@ -1,5 +1,85 @@
-.slider{
+.slider {
+  width: 100%;
+  height: 50vh;
+  //   border: 1px solid red;
+  -webkit-box-shadow: 0px 0px 17px 3px rgba(0, 0, 0, 0.22);
+  -moz-box-shadow: 0px 0px 17px 3px rgba(0, 0, 0, 0.22);
+  box-shadow: 1px 1px 5px 3px rgba(0, 0, 0, 0.22);
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+  .container {
     width: 100%;
-    height: 50vh;
-    border: 1px solid red;
+    height: 100%;
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    .slide {
+      flex-shrink: 0;
+      width: 100%;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  .btn {
+    position: absolute;
+    top: calc(50% - 25px);
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .icon {
+      font-size: 2rem;
+      z-index: 1;
+      color: #fff;
+    }
+    .blur {
+      border-radius: 50%;
+
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.3);
+      -webkit-backdrop-filter: blur(3px);
+      backdrop-filter: blur(3px);
+      z-index: 0;
+    }
+  }
+  .btnRight {
+    right: 50px;
+  }
+  .btnLeft {
+    left: 50px;
+  }
+  .indicators {
+    display: flex;
+    position: absolute;
+    bottom: 1rem;
+    right: 3rem;
+
+    .indicator {
+      background-color: rgba(11, 195, 11, 0.648);
+      height: 0.5rem;
+      width: 0.5rem;
+      border-radius: 100%;
+      border: none;
+      outline: none;
+      margin: 0 0.2rem;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .indicatorInactive {
+      background-color: gray;
+    }
+  }
 }
