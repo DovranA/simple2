@@ -8,7 +8,7 @@ import { img1, img2 } from '../../assets'
 const Home = () => {
   const image = [{ src: img1 }, { src: img2 }, { src: img1 }, { src: img2 }]
   return (
-    <div className={styles.home}>
+    <div className='container'>
       <Slider image={image} />
       <ThinContainer title='Top Ulanjylar' btnTitle='Hemmesi' />
       <Choosens />
