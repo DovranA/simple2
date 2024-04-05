@@ -5,12 +5,21 @@ import { AiOutlineAppstore } from "react-icons/ai";
 type Props = {
   density: boolean;
   setDensity: React.Dispatch<React.SetStateAction<boolean>>;
+  title: string;
+  button?: string;
+  buttonClick?: () => void;
 };
 
-const TopCards = ({ density, setDensity }: Props) => {
+const TopCards = ({
+  density,
+  setDensity,
+  title,
+  button,
+  buttonClick,
+}: Props) => {
   return (
     <nav>
-      <h3>Ahlisi(123456)</h3>
+      <h3>{title}</h3>
       <div>
         <button
           onClick={() => setDensity(true)}
@@ -24,6 +33,11 @@ const TopCards = ({ density, setDensity }: Props) => {
         >
           <AiOutlineAppstore color={density ? "black" : "white"} size={24} />
         </button>
+        {button && (
+          <button className={styles.button} onClick={buttonClick}>
+            {button}
+          </button>
+        )}
       </div>
     </nav>
   );
