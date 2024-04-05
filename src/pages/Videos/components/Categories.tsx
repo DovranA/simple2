@@ -114,6 +114,11 @@ const Categories = () => {
       <button className={styles.moveBtns} onClick={() => handleScrollRight()}>
         <IoIosArrowForward />
       </button>
+      {/* <div className={styles.dropdown}>
+        <div className={styles.noCate}>
+          <h2>No Category</h2>
+        </div>
+      </div> */}
     </div>
   )
 }

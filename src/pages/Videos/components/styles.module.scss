@@ -4,6 +4,7 @@
   justify-content: space-between;
   overflow-x: auto;
   align-items: center;
+  // position: relative;
   .moveBtns {
     border: none;
     background: rgb(231, 231, 231);
@@ -11,6 +12,12 @@
     font-size: 16px;
     border-radius: 0.3rem;
     padding: 0 0.2rem;
+    // &:first-child{
+    //     margin-right: 0.5rem;
+    // }
+    // &:last-child{
+    //     margin-left: 0.5rem;
+    // }
   }
   .wrapper {
     background: rgb(231, 231, 231);

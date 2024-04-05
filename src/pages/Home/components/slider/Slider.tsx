@@ -20,7 +20,6 @@ const Slider = ({ image }: { image: { src: string }[] }) => {
     </section>
   )
 }
-
 const Container = ({ children }: { children: React.ReactNode[] }) => {
   const containerRef = useRef<HTMLUListElement>(null)
   const intervalRef = useRef<any>(null)
