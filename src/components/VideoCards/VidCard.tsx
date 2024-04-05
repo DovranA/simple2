@@ -1,8 +1,9 @@
 type Props = {
-  style: any;
-};
+  style: any
+}
+// import styles from './styles.module.scss'
 const Card = ({ style }: Props) => {
-  return <div className={style}></div>;
-};
+  return <div className={style}></div>
+}
 
-export default Card;
+export default Card
