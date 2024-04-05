@@ -1,23 +1,34 @@
-import { useState } from "react";
+import Card from "./VidCard";
 import styles from "./styles.module.scss";
-import { AiOutlineAppstore } from "react-icons/ai";
-import { IoAppsOutline } from "react-icons/io5";
+import TopCards from "./topCard";
+import { useState } from "react";
+
 const VideoCards = () => {
   const [density, setDensity] = useState<boolean>(true);
+
   return (
     <div className={styles.content}>
-      <nav>
-        <h3>Ahlisi(123456)</h3>
-        <div>
-          <button className={density ? styles.active : ""}>
-            <IoAppsOutline color={density ? "white" : "black"} size={24} />
-          </button>
-          <button className={density ? "" : styles.active}>
-            <AiOutlineAppstore color="black" size={24} />
-          </button>
-        </div>
-      </nav>
-      <div></div>
+      <TopCards density={density} setDensity={setDensity} />
+      <div className={styles.cards}>
+        <Card style={density ? styles.card : styles.bigCard} />
+        <Card style={density ? styles.card : styles.bigCard} />
+        <Card style={density ? styles.card : styles.bigCard} />
+        <Card style={density ? styles.card : styles.bigCard} />
+        <Card style={density ? styles.card : styles.bigCard} />
+        <Card style={density ? styles.card : styles.bigCard} />
+        <Card style={density ? styles.card : styles.bigCard} />
+        <Card style={density ? styles.card : styles.bigCard} />
+        <Card style={density ? styles.card : styles.bigCard} />
+        <Card style={density ? styles.card : styles.bigCard} />
+        <Card style={density ? styles.card : styles.bigCard} />
+        <Card style={density ? styles.card : styles.bigCard} />
+        <Card style={density ? styles.card : styles.bigCard} />
+        <Card style={density ? styles.card : styles.bigCard} />
+        <Card style={density ? styles.card : styles.bigCard} />
+        <Card style={density ? styles.card : styles.bigCard} />
+        <Card style={density ? styles.card : styles.bigCard} />
+        <Card style={density ? styles.card : styles.bigCard} />
+      </div>
     </div>
   );
 };

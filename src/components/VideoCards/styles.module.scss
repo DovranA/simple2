@@ -1,21 +1,63 @@
 .content{
-    nav{
+    .cards{
+        margin-top: 2rem;
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-        div{
-            display: flex;
-            gap: 8px;
-            button{
-                border: none;
-                background: white;
-                padding: 0.2rem 0.2rem 0.1rem 0.2rem;
-                border-radius: 0.2rem;
-            }
-            .active{
-                background: #000;
+        gap: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+        .card{
+            background: #000;
+            border-radius: 0.5rem;
+        }
+        .bigCard{
 
-            }
+            background: #000;
+            border-radius: 0.5rem;
+        }
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .cards{
+        .card{
+            width: 300px;
+            height: 200px;
+        }
+        .bigCard{
+            width: 45%;
+            height: 300px;
+        }
+    }
+  }
+@media screen and (min-width: 1920px) {
+    .cards{
+        .card{
+            width: 260px;
+            height: 200px;
+        }
+        .bigCard{
+            width: 32%;
+            height: 300px;
+        }
+    }
+  }
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    div{
+        display: flex;
+        gap: 8px;
+        button{
+            border: none;
+            background: white;
+            padding: 0.2rem 0.2rem 0.1rem 0.2rem;
+            border-radius: 0.2rem;
+        }
+        .active{
+            background: #000;
+
         }
     }
 }
