@@ -1,0 +1,21 @@
+.table{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    .row{
+        display: flex;
+        background: #fafafa;
+        width: 100%;
+        border-radius: 0.5rem;
+        justify-content: space-between;
+        padding: 0.7rem 1rem;
+        &:nth-child(1),&:nth-child(2),&:nth-child(3){
+            border: 1px solid black;
+        }
+        div{
+            display: flex;
+            gap: 8px;
+        }
+    }
+}
