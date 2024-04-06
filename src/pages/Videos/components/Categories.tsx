@@ -1,9 +1,9 @@
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import styles from './styles.module.scss'
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 type Props = {
   current: number
-  setCurrent: () => void
+  setCurrent: (idx: number) => void
 }
 const Categories = ({ current, setCurrent }: Props) => {
   const wrapperRef = useRef<any>(null)
@@ -26,15 +26,18 @@ const Categories = ({ current, setCurrent }: Props) => {
       <div ref={wrapperRef} className={styles.wrapper}>
         {Array.from(Array(10).keys()).map((_, idx) => {
           return (
-            <span
+            <button
               key={idx}
               className={`${styles.btn}  ${
                 current === idx && styles.activeBtn
               }`}
+              onClick={() => {
+                setCurrent(idx)
+              }}
             >
               <p>Mebel we oy bezeg</p>
               <IoIosArrowForward />
-            </span>
+            </button>
           )
         })}
       </div>
