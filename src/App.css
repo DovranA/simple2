@@ -3,6 +3,8 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  --background: #fff;
+  user-select: none;
 }
 
 .modalContainer {
@@ -44,16 +46,18 @@
   background: #000;
 }
 
-
-.container{
+.container {
   display: flex;
   flex-direction: column;
   padding: 12vh 5vw 5vh 5vw;
   gap: 30px;
+  background-color: var(--background);
 }
 
-a{
+a {
   text-decoration: none;
   color: black;
 }
-
+[dark-theme='dark'] {
+  --background: #000;
+}

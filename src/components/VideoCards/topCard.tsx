@@ -1,14 +1,14 @@
-import styles from "./styles.module.scss";
-import { IoAppsOutline } from "react-icons/io5";
-import { AiOutlineAppstore } from "react-icons/ai";
+import styles from './styles.module.scss'
+import { IoAppsOutline } from 'react-icons/io5'
+import { AiOutlineAppstore } from 'react-icons/ai'
 
 type Props = {
-  density: boolean;
-  setDensity: React.Dispatch<React.SetStateAction<boolean>>;
-  title: string;
-  button?: string;
-  buttonClick?: () => void;
-};
+  density: number
+  setDensity: React.Dispatch<React.SetStateAction<number>>
+  title: string
+  button?: string
+  buttonClick?: () => void
+}
 
 const TopCards = ({
   density,
@@ -22,16 +22,19 @@ const TopCards = ({
       <h3>{title}</h3>
       <div>
         <button
-          onClick={() => setDensity(true)}
-          className={density ? styles.active : ""}
+          onClick={() => setDensity(4)}
+          className={density === 4 ? styles.active : ''}
         >
-          <IoAppsOutline color={density ? "white" : "black"} size={24} />
+          <IoAppsOutline color={density === 4 ? 'white' : 'black'} size={24} />
         </button>
         <button
-          onClick={() => setDensity(false)}
-          className={density ? "" : styles.active}
+          onClick={() => setDensity(2)}
+          className={density === 2 ? styles.active : ''}
         >
-          <AiOutlineAppstore color={density ? "black" : "white"} size={24} />
+          <AiOutlineAppstore
+            color={density === 2 ? 'white' : 'black'}
+            size={24}
+          />
         </button>
         {button && (
           <button className={styles.button} onClick={buttonClick}>
@@ -40,7 +43,7 @@ const TopCards = ({
         )}
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default TopCards;
+export default TopCards

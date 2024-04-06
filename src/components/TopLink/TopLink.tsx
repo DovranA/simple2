@@ -1,14 +1,14 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation } from 'react-router-dom'
 type Props = {
-  location: string;
-};
+  location: string
+}
 const TopLink = ({ location }: Props) => {
   return (
     <p>
-      <Link to="/">Bas Sahypa / </Link>
+      <Link to='/'>Bas Sahypa / </Link>
       <strong>{location}</strong>
     </p>
-  );
-};
+  )
+}
 
-export default TopLink;
+export default TopLink

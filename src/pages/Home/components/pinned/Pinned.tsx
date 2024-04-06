@@ -1,23 +1,23 @@
-import { useState } from "react";
-import VideoCards from "../../../../components/VideoCards/VideoCards";
-import TopCards from "../../../../components/VideoCards/topCard";
-import styles from "./style.module.scss";
+import { useState } from 'react'
+import VideoCards from '../../../../components/VideoCards/VideoCards'
+import TopCards from '../../../../components/VideoCards/topCard'
+import styles from './style.module.scss'
 const Pinned = () => {
-  const [density, setDensity] = useState<boolean>(true);
+  const [density, setDensity] = useState<number>(4)
 
   return (
     <div className={styles.pinned}>
       <VideoCards density={density}>
         <TopCards
-          title="Ahlisi(123456)"
+          title='Berkidilenler'
           density={density}
           setDensity={setDensity}
-          button="Hemmesi"
+          button='Hemmesi'
           buttonClick={() => {}}
         />
       </VideoCards>
     </div>
-  );
-};
+  )
+}
 
-export default Pinned;
+export default Pinned

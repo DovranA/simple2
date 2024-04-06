@@ -37,6 +37,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    position: relative;
     .notificDiv {
       font-size: 2.3rem;
       margin: 0 50px;
@@ -62,6 +63,32 @@
         width: 50px;
         height: 50px;
         border-radius: 50%;
+      }
+    }
+    ul {
+      list-style: none;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 50px;
+      right: 10px;
+      padding: 10px 15px;
+      -webkit-box-shadow: 0px 0px 6px 3px rgba(0, 0, 0, 0.22);
+      -moz-box-shadow: 0px 0px 6px 3px rgba(0, 0, 0, 0.22);
+      box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.22);
+      border-radius: 0.5rem;
+      gap: 10px;
+      width: 220px;
+      li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 15px;
+        &:last-child {
+          color: red;
+          border-top: 1px solid gray;
+        }
       }
     }
   }

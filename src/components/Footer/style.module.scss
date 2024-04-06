@@ -1,67 +1,66 @@
-.footer{
-    width: 100vw;
-    background: #000;
-    padding: 3rem 5vw;
-    color: white;
-    border-bottom: 2px solid rgb(176, 176, 176);
+.footer {
+  width: 100vw;
+  background: #000;
+  padding: 3rem 5vw;
+  color: white;
+  border-bottom: 2px solid rgb(176, 176, 176);
 
-    .upper{
+  .upper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .left {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      p {
+        color: rgb(176, 176, 176);
+      }
+    }
+    .right {
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      gap: 10px;
+      a {
+        color: rgb(176, 176, 176);
+      }
+    }
+  }
+  .toTopBtn {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: end;
+    a {
+      background: white;
+      padding: 0.2rem 0.3rem 0.2rem 0.28rem;
+      border-radius: 0.2rem;
+    }
+  }
+  .under {
+    margin-top: 1.5rem;
+    border-top: 2px solid rgb(176, 176, 176);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0 0 0;
+    .links {
+      display: flex;
+      gap: 10px;
+      a {
+        background: rgb(255, 255, 255);
+        padding: 0.4rem;
+        border-radius: 0.3rem;
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        .left{
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            p{
-                color: rgb(176, 176, 176);
-
-            }
+        gap: 5px;
+        width: 8rem;
+        span {
+          p {
+            font-size: 12px;
+          }
         }
-        .right{
-            display: flex;
-            flex-direction: column;
-            align-items: end;
-            gap: 10px;
-            a{
-                color: rgb(176, 176, 176);
-            }
-        }
+      }
     }
-    .toTopBtn{
-        margin-top: 1.5rem;
-        display: flex;
-        justify-content: end;
-        a{
-            background: white;
-            padding: 0.2rem 0.3rem 0.2rem 0.28rem;
-            border-radius: 0.2rem;
-        }
-    }
-    .under{
-        margin-top: 1.5rem;
-        border-top: 2px solid rgb(176, 176, 176);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 2rem 0 0 0;
-        .links{
-            display: flex;
-            gap: 10px;
-            a{
-                background: rgb(255, 255, 255);
-                padding: 0.4rem ;
-                border-radius: 0.3rem;
-                display: flex;
-                align-items: center;
-                gap: 5px;
-                width: 8rem;
-                span{
-                    p{
-                        font-size: 12px;
-                    }
-                }
-            }
-        }
-    }
+  }
 }

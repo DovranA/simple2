@@ -1,3 +1,4 @@
+
 import Choosens from "./components/choosens/Choosens";
 import Player from "./components/modals/Player";
 import Pinned from "./components/pinned/Pinned";
@@ -52,7 +53,7 @@ const Home = () => {
 
       {false ? <Player /> : null}
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
