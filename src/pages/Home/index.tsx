@@ -5,18 +5,49 @@ import Slider from "./components/slider/Slider";
 import styles from "./home.module.scss";
 import ThinContainer from "../../components/ThinContainer";
 import { img1, img2 } from "../../assets";
+import { useEffect } from "react";
+import { SelectHomeData, mainPageFetch } from "../../features/homeSlice";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
 const Home = () => {
+  const dispatch = useAppDispatch();
+  const data = useAppSelector(SelectHomeData);
   const image = [{ src: img1 }, { src: img2 }, { src: img1 }, { src: img2 }];
+  useEffect(() => {
+    dispatch(mainPageFetch());
+  }, []);
+
   return (
     <div className={styles.home}>
       <Slider image={image} />
-      <ThinContainer title="Top Ulanjylar" btnTitle="Hemmesi" />
+      <ThinContainer
+        img={data.topusers.image}
+        title="Top Ulanjylar"
+        btnTitle="Hemmesi"
+      />
       <Choosens />
-      <ThinContainer title="Top Wideolar" btnTitle="Hemmesi" />
+      <ThinContainer
+        img={data.topvideos.image}
+        title="Top Wideolar"
+        btnTitle="Hemmesi"
+      />
       <div className={styles.flexDiv}>
-        <ThinContainer title="Trendlar" btnTitle="+90" />
-        <ThinContainer title="Brendlar" btnTitle="Hemmesi" />
+        <ThinContainer
+          img={data.trends.image}
+          title="Trendlar"
+          btnTitle={data.trends.total}
+        />
+        <ThinContainer
+          img={data.brands.image}
+          title="Brendlar"
+          btnTitle="Hemmesi"
+        />
       </div>
+      <ThinContainer
+        img={data.totalvideos.image}
+        title="Wideolar"
+        btnTitle="+80"
+      />
+
       <Pinned />
 
       {false ? <Player /> : null}
