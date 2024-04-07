@@ -1,9 +1,4 @@
-.table{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    .row{
+.row{
         display: flex;
         background: #fafafa;
         width: 100%;
@@ -32,4 +27,3 @@
         }
 
     }
-}

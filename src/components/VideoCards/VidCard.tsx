@@ -1,43 +1,46 @@
-import { BsPlayFill } from 'react-icons/bs'
-import { img1 } from '../../assets'
-import styles from './styles.module.scss'
-import { LuEye, LuHeart } from 'react-icons/lu'
-import { FiDownload } from 'react-icons/fi'
-import LikeBtn from '../Like/LikeBtn'
-import { motion } from 'framer-motion'
+import { BsPlayFill } from "react-icons/bs";
+import styles from "./styles.module.scss";
+import { LuEye } from "react-icons/lu";
+import { FiDownload } from "react-icons/fi";
+import LikeBtn from "../Like/LikeBtn";
+import { TopVideo } from "../../types/topUsers";
+import moment from "moment";
 
 type Props = {
-  style: any
-}
-const Card = ({ style }: Props) => {
+  style: any;
+  info: TopVideo;
+};
+const Card = ({ style, info }: Props) => {
   return (
     <div className={`${styles.cardContain}`} style={style}>
       <div className={styles.btn}>
         <BsPlayFill className={styles.icon} />
         <div className={styles.blur}></div>
       </div>
-      <img src={img1} alt='' />
+      <img src={info.image_path} alt="" />
       <div className={styles.info}>
-        <p>title</p>
+        <p>{info.title}</p>
         <div className={style.about}>
-          <span className={styles.date}>19.03.2022</span>
+          <span className={styles.date}>
+            {moment(info.created_at).format("DD-MM-YYYY")}
+          </span>
           <span className={styles.counts}>
             <span>
               <LuEye size={23} />
-              100
+              {info.view_count}
             </span>
             <span>
-              <LikeBtn /> 200
+              <LikeBtn /> {info.like_count}
             </span>
             <span>
-              <FiDownload size={23} /> 300
+              <FiDownload size={23} /> {info.download_count}
             </span>
           </span>
         </div>
       </div>
       <span className={styles.bg}></span>
     </div>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;

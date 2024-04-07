@@ -2,21 +2,29 @@ import styles from "./styles.module.scss";
 type Props = {
   icons: React.ReactElement<any>[];
   active: number;
+  index: number;
+  img: string;
+  name: string;
+  point: number;
 };
 
-const Row = ({ icons, active }: Props) => {
+const Row = ({ icons, active, index, img, name, point }: Props) => {
   return (
     <div className={styles.row}>
       <div>
-        <span>1</span>
+        <span>{index}</span>
         <span>
-          <img src="/card1.png" alt="" />
+          <img src={img} alt="" />
         </span>
         <span>
-          <p>100 Haryt</p>
+          <p>{name}</p>
         </span>
       </div>
-      <span>1234 {icons[active]}</span>
+      <span>
+        {point}
+
+        {icons[active]}
+      </span>
     </div>
   );
 };

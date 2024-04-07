@@ -33,8 +33,12 @@ const initialState:InitialHome = {
             image:"",
             total:0
         },
-        choosens:{
+        saylananlar:{
             details:[],
+            total: 0
+        },
+        pinnedVideos:{
+            detail:[],
             total: 0
         }
     },
