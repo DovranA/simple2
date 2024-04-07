@@ -36,7 +36,8 @@ const Navbar = () => {
             <li
               onClick={() => {
                 setModal(!modal)
-                setModalType('user')
+                setModalType('login')
+
                 setOptions(!options)
               }}
             >
