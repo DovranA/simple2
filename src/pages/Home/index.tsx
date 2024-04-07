@@ -1,6 +1,4 @@
-
 import Choosens from "./components/choosens/Choosens";
-import Player from "./components/modals/Player";
 import Pinned from "./components/pinned/Pinned";
 import Slider from "./components/slider/Slider";
 import styles from "./home.module.scss";
@@ -9,6 +7,7 @@ import { img1, img2 } from "../../assets";
 import { useEffect } from "react";
 import { SelectHomeData, mainPageFetch } from "../../features/homeSlice";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import Player from "../../components/Player/Player";
 const Home = () => {
   const dispatch = useAppDispatch();
   const data = useAppSelector(SelectHomeData);
@@ -53,7 +52,7 @@ const Home = () => {
 
       {false ? <Player /> : null}
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
