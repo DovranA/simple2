@@ -1,0 +1,27 @@
+.video {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  &:first-child {
+    margin-top: 10px;
+  }
+  .video__player {
+    scroll-snap-align: start;
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+  }
+  .fullWidth {
+    max-width: 1550px;
+  }
+  .fitWidth {
+    max-width: 490px;
+  }
+}
