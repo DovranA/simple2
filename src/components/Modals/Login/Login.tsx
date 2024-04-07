@@ -9,6 +9,7 @@ type Props = {
   close: () => void
 }
 const Login = ({ close }: Props) => {
+
   const [name, setName] = useState('')
   const [password, setPassword] = useState('')
   const [passVisible, setPassVisible] = useState(false)
@@ -61,6 +62,7 @@ const Login = ({ close }: Props) => {
         <RiErrorWarningLine size={25} />
         Agza bolmak uchin admina yuz tutun
       </span>
+
     </div>
   )
 }

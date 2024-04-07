@@ -3,6 +3,7 @@ import styles from './style.module.scss'
 import { motion } from 'framer-motion'
 import Login from './Login/Login'
 import AddVideo from './AddVideo/AddVideo'
+
 type Props = {
   setModal: (prev: any) => void
   type: string
@@ -48,6 +49,7 @@ const Modal = ({ setModal, type }: Props) => {
       // }}
     >
       {modal()}
+
     </motion.div>
   )
 }

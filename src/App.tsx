@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import About from "./pages/about";
 import Videos from "./pages/Videos";
 import TopUsers from "./pages/TopUsers";
+import TopVideos from "./pages/TopVideos";
 
 function App() {
   return (
@@ -14,11 +15,11 @@ function App() {
       <Routes>
 
         <Route path="/" element={<SharedLayout />}>
-          <Route index element={<h1>Home</h1>} />
-          {/* <Route index element={<Home />} /> */}
+          <Route index element={<Home />} />
           <Route path="/videos" element={<Videos />} />
           <Route path="/about" element={<About />} />
           <Route path="/topusers" element={<TopUsers />} />
+          <Route path="/topvideos" element={<TopVideos />} />
         </Route>
       </Routes>
     </BrowserRouter>
