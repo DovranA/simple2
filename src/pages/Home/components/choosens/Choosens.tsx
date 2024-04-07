@@ -1,6 +1,11 @@
-import Card from './card'
-import styles from './style.module.scss'
+import { useAppSelector } from "../../../../app/hooks";
+import { SelectHomeData } from "../../../../features/homeSlice";
+import Card from "./card";
+import styles from "./style.module.scss";
 const Choosens = () => {
+  const data = useAppSelector(SelectHomeData);
+  console.log(data);
+
   return (
     <div className={styles.container}>
       <nav>
@@ -19,7 +24,7 @@ const Choosens = () => {
         <Card />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Choosens
+export default Choosens;

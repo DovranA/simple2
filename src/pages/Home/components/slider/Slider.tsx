@@ -6,15 +6,20 @@ import {
   useMemo,
   useRef,
   useState,
-} from 'react'
-import styles from './style.module.scss'
-import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
+
+} from "react";
+import styles from "./style.module.scss";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { useAppSelector } from "../../../../app/hooks";
+import { SelectHomeData } from "../../../../features/homeSlice";
 const Slider = ({ image }: { image: { src: string }[] }) => {
+  const data = useAppSelector(SelectHomeData);
+
   return (
     <section className={styles.slider}>
       <Container>
-        {image.map((item: any, idx: number) => (
-          <img src={item.src} alt={String(idx)} key={idx} />
+        {data.banner.images.map((item: any, idx: number) => (
+          <img src={item.img} alt={String(idx)} key={idx} />
         ))}
       </Container>
     </section>
