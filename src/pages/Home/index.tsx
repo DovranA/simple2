@@ -6,7 +6,7 @@ import ThinContainer from '../../components/ThinContainer'
 import { useEffect } from 'react'
 import { SelectHomeData, mainPageFetch } from '../../features/homeSlice'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
-import Player from '../../components/Player/Player'
+import Player from '../../components/Player'
 const Home = () => {
   const dispatch = useAppDispatch()
   const data = useAppSelector(SelectHomeData)
@@ -40,18 +40,12 @@ const Home = () => {
         <ThinContainer
           img={data.brands.image}
           title='Brendlar'
-          btnTitle='Hemmesi'
           link='brands'
-          title='Brendlar'
           btnTitle={String(data.brands.total)}
-          link='brands'
         />
       </div>
       <ThinContainer
         img={data.totalvideos.image}
-        title='Wideolar'
-        btnTitle='+80'
-        link='videos'
         title='Wideolar'
         btnTitle={String(data.totalvideos.total)}
         link='videos'
