@@ -7,18 +7,16 @@ import { img1, img2 } from '../../assets'
 import { useEffect } from 'react'
 import { SelectHomeData, mainPageFetch } from '../../features/homeSlice'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
-import Player from '../../components/Player'
 const Home = () => {
   const dispatch = useAppDispatch()
   const data = useAppSelector(SelectHomeData)
-  const image = [{ src: img1 }, { src: img2 }, { src: img1 }, { src: img2 }]
   useEffect(() => {
     dispatch(mainPageFetch())
   }, [])
 
   return (
     <div className={styles.home}>
-      <Slider image={image} />
+      <Slider />
       <ThinContainer
         img={data.topusers.image}
         title='Top Ulanjylar'
@@ -48,7 +46,6 @@ const Home = () => {
         btnTitle='+80'
       />
       <Pinned />
-      {true ? <Player /> : null}
     </div>
   )
 }

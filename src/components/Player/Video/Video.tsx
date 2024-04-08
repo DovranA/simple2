@@ -12,12 +12,9 @@ const Video = ({ videocontent, options, setPlay }: Props) => {
   const [videoTime, setVideoTime] = useState<number>(0)
   const [currentTime, setCurrentTime] = useState<number>(0)
   const videoRef = useRef<HTMLVideoElement>(null)
-  useEffect(() => {
-    setVideoTime(Number(videoRef.current?.duration))
-  }, [])
-  useEffect(() => {
-    setProgress((currentTime / videoTime) * 100)
-  }, [currentTime])
+  const interval = setInterval(() => {
+    if (videoRef.current) setCurrentTime(videoRef.current?.currentTime)
+  }, 1000)
   const handleProgress = (e: any) => {
     const newTime = Math.min(
       Math.max((videoTime / 100) * e.target.value, 0),
@@ -29,12 +26,24 @@ const Video = ({ videocontent, options, setPlay }: Props) => {
     }
   }
   useEffect(() => {
+    if (videoRef.current) {
+      setVideoTime(videoRef.current?.duration)
+    }
+    setProgress(0)
+  }, [videoRef.current?.duration])
+  useEffect(() => {
+    setProgress((currentTime / videoTime) * 100)
+  }, [currentTime])
+
+  useEffect(() => {
     if (videoRef.current && options) {
       videoRef.current.volume = Math.min(Math.max(options.volume, 0), 1)
       if (options.currentId === videocontent.id && options?.playing) {
         videoRef.current?.play()
+        interval
       } else {
         videoRef.current?.pause()
+        clearInterval(interval)
       }
     }
   }, [options])
@@ -42,12 +51,7 @@ const Video = ({ videocontent, options, setPlay }: Props) => {
     <div className={styles.video}>
       <video
         onClick={setPlay}
-        className={
-          // videocontent?.is_vertical
-          // ?
-          `${styles.video__player} ${styles.fitWidth}`
-          // : `${styles.video__player} ${styles.fullWidth}`
-        }
+        className={styles.video__player}
         loop
         ref={videoRef}
         muted={options?.muted}
@@ -55,12 +59,8 @@ const Video = ({ videocontent, options, setPlay }: Props) => {
         <source src={String(videocontent?.videofile)} type='video/mp4'></source>
       </video>
       <span
-        className={
-          // videocontent?.is_vertical
-          //   ?
-          `${styles.videoDurSlice} ${styles.fitWidth}`
-          // : `${styles.videoDurSlice} ${styles.fullWidth}`
-        }
+        className={styles.videoDurSlice}
+        style={{ width: videoRef.current?.clientWidth }}
       >
         <span className={styles.duration}>
           {Math.floor(currentTime / 60) +
@@ -74,6 +74,11 @@ const Video = ({ videocontent, options, setPlay }: Props) => {
           className={styles.slice}
           onChange={handleProgress}
         />
+        <span className={`${styles.duration} ${styles.end}`}>
+          {Math.floor(videoTime / 60) +
+            ':' +
+            ('0' + Math.floor(videoTime % 60)).slice(-2)}
+        </span>
       </span>
     </div>
   )

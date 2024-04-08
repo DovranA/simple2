@@ -13,7 +13,7 @@ const Navbar = () => {
   const [modalType, setModalType] = useState<string>('')
   return (
     <nav className={styles.navbar}>
-      {modal && <Modal setModal={setModal} type={modalType} />}
+      {modal && <Modal setModal={setModal} type={modalType} onOff={modal} />}
       <span>
         <img src={logo} alt='logo' />
       </span>
@@ -22,7 +22,13 @@ const Navbar = () => {
         <i className='bi bi-search'></i>
       </div>
       <div className={styles.right}>
-        <NotificationBtn count={100} />
+        <NotificationBtn
+          count={100}
+          onClick={() => {
+            setModal(!modal)
+            setModalType('notice')
+          }}
+        />
         <div
           className={styles.avatar}
           onClick={() => {

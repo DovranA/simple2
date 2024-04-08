@@ -2,26 +2,36 @@
   position: relative;
   width: 100%;
   height: 100%;
-  border-radius: 20px;
+  border-radius: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px solid black;
   &:first-child {
     margin-top: 10px;
   }
   .video__player {
     scroll-snap-align: start;
     object-fit: fill;
-    width: 100%;
     height: 100%;
     border-radius: 10px;
   }
-  .fullWidth {
-    max-width: 1550px;
-  }
-  .fitWidth {
-    max-width: 490px;
+  .videoDurSlice {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    bottom: 0;
+    .duration {
+      position: absolute;
+      color: #fff;
+      bottom: 25px;
+      padding: 0 10px;
+    }
+    .end {
+      right: 0;
+    }
+    input {
+      width: 100%;
+    }
   }
 }

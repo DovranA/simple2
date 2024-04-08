@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import styles from './styles.module.scss'
 import { IoClose } from 'react-icons/io5'
 import {
@@ -23,12 +23,7 @@ const Player = () => {
   const [muted, setMuted] = useState(false)
   const [volume, setVolume] = useState(0.5)
   const playerRef = useRef<HTMLDivElement>(null)
-  const setCurrChild = (dir: number) => {
-    if (current > 0 && current < myVideoData.length - 1) {
-      console.log(dir)
-      setCurrent(current + dir)
-    }
-  }
+  const videospace = useRef<HTMLDivElement>(null)
   const myVideoData = [
     {
       id: 300,
@@ -55,42 +50,55 @@ const Player = () => {
     }
   }
   const handleKey = (e: any) => {
-    e.preventDefault()
     switch (e.code) {
       case 'Space':
+        e.preventDefault()
         setPalying((prev) => !prev)
         break
       case 'ArrowUp':
-        setCurrChild(-1)
+        e.preventDefault()
+
+        setCurrent((prev) => (prev > 0 ? --prev : prev))
+        setRand(Math.random())
         break
       case 'ArrowDown':
-        setCurrChild(1)
+        e.preventDefault()
+        setCurrent((prev) => (prev < myVideoData.length - 1 ? ++prev : prev))
+        setRand(Math.random())
         break
     }
   }
-  console.log(current)
   useEffect(() => {
-    document.body.style.overflowY = 'hidden'
     setCurrent(0)
     setFullScreen(true)
-    playerRef.current?.focus()
+    videospace.current?.focus()
+    document.body.style.overflow = 'hidden'
     playerRef.current?.addEventListener('scrollend', handleScroll, false)
-    playerRef.current?.addEventListener('keydown', handleKey, false)
-    setCurrent(myVideoData[0].id)
     return () => {
-      document.body.style.overflowY = 'auto'
+      document.body.style.overflow = 'auto'
       playerRef.current?.removeEventListener('scrollend', handleScroll)
-      playerRef.current?.removeEventListener('keydown', handleKey)
     }
   }, [])
+  useEffect(() => {
+    playerRef.current?.children[current].scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+      inline: 'start',
+    })
+  }, [rand])
   return (
-    <div className={styles.containerPlayer}>
+    <div
+      className={styles.containerPlayer}
+      tabIndex={-1}
+      onKeyDown={handleKey}
+      ref={videospace}
+    >
       <span className={styles.videoSpace}>
         <span className={styles.search}>
           <input type='text' placeholder='Gozleg' />
           <CiSearch />
         </span>
-        <div className={styles.app__videos} tabIndex={-1} ref={playerRef}>
+        <div className={styles.app__videos} ref={playerRef}>
           {myVideoData.map((item, idx: number) => {
             return (
               <Video
@@ -112,10 +120,25 @@ const Player = () => {
             <IoClose size={40} />
           </span>
           <div className={styles.arrows}>
-            <span className={styles.icon}>
+            <span
+              className={styles.icon}
+              onClick={() => {
+                setCurrent((prev) => (prev > 0 ? --prev : prev))
+                setRand(Math.random())
+              }}
+            >
               <IoIosArrowUp size={40} />
             </span>
-            <span className={styles.icon}>
+            <span
+              className={styles.icon}
+              onClick={() => {
+                console.log('first')
+                setCurrent((prev) =>
+                  prev < myVideoData.length - 1 ? ++prev : prev
+                )
+                setRand(Math.random())
+              }}
+            >
               <IoIosArrowDown size={40} />
             </span>
           </div>
@@ -142,7 +165,21 @@ const Player = () => {
               <LikeBtn size={30} />
             </span>
             <p>100k</p>
-            <span className={styles.icon}>
+            <span
+              className={styles.icon}
+              onClick={() => {
+                navigator.clipboard
+                  .writeText(
+                    `http://localhost:5173/videos/${300}?share=${'asjjbdashdbahdbajs'}`
+                  )
+                  .then(() => {
+                    console.log('copyed')
+                  })
+                  .catch((err) => {
+                    console.log(err)
+                  })
+              }}
+            >
               <PiShareFat size={30} />
             </span>
             <p>100k</p>
