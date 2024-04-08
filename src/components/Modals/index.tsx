@@ -3,18 +3,25 @@ import styles from './style.module.scss'
 import { motion } from 'framer-motion'
 import Login from './Login/Login'
 import AddVideo from './AddVideo/AddVideo'
+import Notice from './Notice/Notice'
 
 type Props = {
   setModal: (prev: any) => void
   type: string
+  onOff: boolean
 }
-const Modal = ({ setModal, type }: Props) => {
+const Modal = ({ setModal, type, onOff }: Props) => {
   useEffect(() => {
     document.body.style.overflowY = 'hidden'
     return () => {
       document.body.style.overflowY = 'auto'
     }
   }, [])
+
+  const variants = {
+    visable: { opacity: 1 },
+    hidden: { opacity: 0 },
+  }
   const modal = () => {
     switch (type) {
       case 'login':
@@ -33,23 +40,29 @@ const Modal = ({ setModal, type }: Props) => {
             }}
           />
         )
+      case 'notice':
+        return (
+          <Notice
+            close={() => {
+              setModal((prev: any) => !prev)
+            }}
+          />
+        )
       default:
         return null // Handle cases where unsupported type is provided
     }
   }
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.3 }}
-      exit={{ opacity: 0 }}
+      variants={variants}
+      animate={onOff ? 'visable' : 'hidden'}
+      transition={{ duration: 1 }}
       className={styles.container}
       // onClick={() => {
       //   setModal((prev: any) => !prev)
       // }}
     >
       {modal()}
-
     </motion.div>
   )
 }

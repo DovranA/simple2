@@ -1,0 +1,18 @@
+.container {
+  position: absolute;
+  width: 850px;
+  height: 750px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 3rem;
+  border-radius: 2rem;
+  z-index: 3;
+  gap: 15px;
+  .close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+}

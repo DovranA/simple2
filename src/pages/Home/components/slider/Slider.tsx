@@ -6,10 +6,11 @@ import {
   useMemo,
   useRef,
   useState,
-} from "react";
-import styles from "./style.module.scss";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-
+} from 'react'
+import styles from './style.module.scss'
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
+import { useAppSelector } from '../../../../app/hooks'
+import { SelectHomeData } from '../../../../features/homeSlice'
 const Slider = ({ image }: { image: { src: string }[] }) => {
   return (
     <section className={styles.slider}>
@@ -141,9 +142,13 @@ const Container = ({ children }: { children: React.ReactNode[] }) => {
           return (
             <button
               key={idx}
-              onClick={() => setCurrent(idx)}
+              onClick={() => {
+                setCurrent(idx + 1)
+                if (containerRef.current)
+                  setTranslateX(containerRef.current?.clientWidth * current)
+              }}
               className={
-                current === idx
+                current - 1 === idx
                   ? styles.indicator
                   : `${styles.indicator} ${styles.indicatorInactive}`
               }

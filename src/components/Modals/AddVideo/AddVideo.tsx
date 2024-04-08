@@ -10,10 +10,12 @@ const AddVideo = ({ close }: Props) => {
       <MdClose size={30} className={styles.close} onClick={close} />
       <h1>Wideo goshmak</h1>
       <div className={styles.preview}>
-        <span className={styles.dropDown}>
-          <span> Wideo gosh</span>
-        </span>
         <img src={img1} alt='img' />
+        <img src={img1} alt='img' />
+      </div>
+      <div className={styles.categires}>
+        <select className={styles.item}></select>
+        <span className={styles.item}>Sub-kategoriyalary sayla</span>
       </div>
     </div>
   )

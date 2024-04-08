@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { LuHeart } from 'react-icons/lu'
 import { motion } from 'framer-motion'
+import styles from './style.module.scss'
 type Props = {
   size?: number
   liked?: boolean
@@ -16,6 +17,7 @@ const LikeBtn = ({ size = 23, liked = false }: Props) => {
   }, [liked])
   return (
     <motion.span
+      className={styles.container}
       onClick={() => {
         setFill(!fill)
       }}
