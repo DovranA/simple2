@@ -7,6 +7,7 @@ import { FaDownload } from "react-icons/fa6";
 import { useAppDispatch, useAppSelector } from "../../../app/hooks";
 import {
   SlctVideosActiveBtn,
+  handleVideosFetch,
   setVideosActiveBtn,
 } from "../../../features/rankSlice";
 
@@ -18,7 +19,10 @@ const FilterBtns = () => {
   return (
     <div className={styles.filterBtns}>
       <RankButton
-        onClick={() => dispatch(setVideosActiveBtn(0))}
+        onClick={() => {
+          dispatch(handleVideosFetch("likes"));
+          dispatch(setVideosActiveBtn(0));
+        }}
         active={activeBtn === 0 ? true : false}
       >
         {activeBtn === 0 ? (
@@ -28,7 +32,10 @@ const FilterBtns = () => {
         )}
       </RankButton>
       <RankButton
-        onClick={() => dispatch(setVideosActiveBtn(1))}
+        onClick={() => {
+          dispatch(handleVideosFetch("shares"));
+          dispatch(setVideosActiveBtn(1));
+        }}
         active={activeBtn === 1 ? true : false}
       >
         <IoShareSocialOutline
@@ -37,7 +44,10 @@ const FilterBtns = () => {
         />
       </RankButton>
       <RankButton
-        onClick={() => dispatch(setVideosActiveBtn(2))}
+        onClick={() => {
+          dispatch(handleVideosFetch("downloads"));
+          dispatch(setVideosActiveBtn(2));
+        }}
         active={activeBtn === 2 ? true : false}
       >
         <FaDownload color={activeBtn === 2 ? "white" : "black"} size={20} />

@@ -24,18 +24,34 @@ type TotalVideos = {
   image: string
   total: number
 }
-type Choosens = {
-  details: any[]
-  total: number
+
+
+export type Saylanan= {
+    created_at:string
+    id: number
+    image: string
+    name:string
+    total_views: number
+    video_count: number
+}
+export type Saylananlar = {
+    details: Saylanan[]
+    total:number
+} 
+export  type PinnedVideos = {
+    detail: any[]
+    total:number
 }
 type Data = {
-  banner: Banner
-  brands: Brands
-  topvideos: Topvideos
-  topusers: Topusers
-  trends: Trends
-  totalvideos: TotalVideos
-  saylananlar: Choosens
+    banner: Banner,
+    brands:Brands,
+    topvideos:Topvideos
+    topusers:Topusers
+    trends: Trends
+    totalvideos:TotalVideos
+    saylananlar:Saylananlar,
+    pinnedVideos:PinnedVideos
+
 }
 export type InitialHome = {
   playerModal: boolean

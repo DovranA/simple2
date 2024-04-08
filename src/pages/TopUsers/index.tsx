@@ -1,27 +1,41 @@
 import { IoIosHeart } from "react-icons/io";
-import Banner from "../../components/Banner/Banner";
 import TopLink from "../../components/TopLink/TopLink";
 import FilterBtns from "./components/filterUsers/Filter";
-import Table from "../../components/RankTable/Table";
 import { IoEyeOutline } from "react-icons/io5";
 import { FaBitcoin } from "react-icons/fa";
-import { useAppSelector } from "../../app/hooks";
-import { SlctUserActiveBtn } from "../../features/rankSlice";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import {
+  SlctUsersRankData,
+  SlctUserActiveBtn,
+  handleUserFetch,
+  setUserActiveBtn,
+} from "../../features/rankSlice";
+import { useEffect } from "react";
+import Slider from "../Home/components/slider/Slider";
+import Table from "./components/table/Table";
 
 const TopUsers = () => {
+  const dispatch = useAppDispatch();
   const IconArr = [
     <IoIosHeart size={22} color="red" />,
     <IoEyeOutline size={20} />,
-    <FaBitcoin color="FF9800" size={20} />,
+    <img src="/coin.png" width={20} height={20} alt="" />,
   ];
+
+  useEffect(() => {
+    dispatch(handleUserFetch("likes"));
+    dispatch(setUserActiveBtn(0));
+  }, []);
+
+  const data = useAppSelector(SlctUsersRankData);
 
   const active = useAppSelector(SlctUserActiveBtn);
   return (
     <div className="container">
       <TopLink location="Top Ulanjylar" />
-      <Banner />
+      <Slider image={data.banner.images} />
       <FilterBtns />
-      <Table active={active} icons={IconArr} />
+      <Table active={active} data={data.userprofle} icons={IconArr} />
     </div>
   );
 };
