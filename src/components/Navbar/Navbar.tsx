@@ -23,7 +23,7 @@ const Navbar = () => {
 
   return (
     <nav className={styles.navbar}>
-      {modal && <Modal setModal={setModal} type={modalType} />}
+      {modal && <Modal setModal={setModal} type={modalType} onOff={modal} />}
       <span>
         <img src={logo} alt="logo" />
       </span>
@@ -32,7 +32,13 @@ const Navbar = () => {
         <i className="bi bi-search"></i>
       </div>
       <div className={styles.right}>
-        <NotificationBtn count={100} />
+        <NotificationBtn
+          count={100}
+          onClick={() => {
+            setModal(!modal)
+            setModalType('notice')
+          }}
+        />
         <div
           className={styles.avatar}
           onClick={() => {
@@ -45,10 +51,16 @@ const Navbar = () => {
           <motion.ul initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
             <li
               onClick={() => {
+<<<<<<< HEAD
                 setModal(!modal);
                 setModalType("login");
 
                 setOptions(!options);
+=======
+                setModal(!modal)
+                setModalType('login')
+                setOptions(!options)
+>>>>>>> eada75df65b6cf520d3c229e2534ff61e5fb73cb
               }}
             >
               <BiUser size={23} />

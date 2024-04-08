@@ -1,3 +1,4 @@
+
 import Choosens from "./components/choosens/Choosens";
 import Pinned from "./components/pinned/Pinned";
 import Slider from "./components/slider/Slider";
@@ -11,21 +12,24 @@ const Home = () => {
   const dispatch = useAppDispatch();
   const data = useAppSelector(SelectHomeData);
   useEffect(() => {
-    dispatch(mainPageFetch());
-  }, []);
+    dispatch(mainPageFetch())
+  }, [])
 
   return (
     <div className={styles.home}>
+
       <Slider image={data.banner.images} />
       <ThinContainer
         img={data.topusers.image}
         title="Top Ulanjylar"
         btnTitle="Hemmesi"
         link="topusers"
+
       />
       <Choosens data={data.saylananlar} />
       <ThinContainer
         img={data.topvideos.image}
+
         title="Top Wideolar"
         btnTitle="Hemmesi"
         link="topvideos"
@@ -33,12 +37,13 @@ const Home = () => {
       <div className={styles.flexDiv}>
         <ThinContainer
           img={data.trends.image}
-          title="Trendlar"
+          title='Trendlar'
           btnTitle={data.trends.total}
           link="topusers"
         />
         <ThinContainer
           img={data.brands.image}
+
           title="Brendlar"
           btnTitle="Hemmesi"
           link="brands"
@@ -46,6 +51,7 @@ const Home = () => {
       </div>
       <ThinContainer
         img={data.totalvideos.image}
+
         title="Wideolar"
         btnTitle="+80"
         link="videos"

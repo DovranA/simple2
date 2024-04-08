@@ -1,29 +1,30 @@
-export type Banner= {
-    images: any[]
+export type Banner = {
+  images: any[]
 }
 
 type Brands = {
-    image: string,
-    total: number
-} 
+  image: string
+  total: number
+}
 
-type Topvideos ={
-    image: string,
-    total: number
+type Topvideos = {
+  image: string
+  total: number
 }
 type Topusers = {
-    image:string,
-    total:number
+  image: string
+  total: number
 }
 type Trends = {
-    image: string,
-    total:number
+  image: string
+  total: number
 }
 
 type TotalVideos = {
-    image: string,
-    total:number
+  image: string
+  total: number
 }
+
 
 export type Saylanan= {
     created_at:string
@@ -53,8 +54,8 @@ type Data = {
 
 }
 export type InitialHome = {
-    playerModal: boolean,
-    loading: boolean,
-    error: any,
-    data:Data
+  playerModal: boolean
+  loading: boolean
+  error: any
+  data: Data
 }
