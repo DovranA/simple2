@@ -1,4 +1,5 @@
 
+
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./App.css";
@@ -30,7 +31,7 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
-  );
+  )
 }
 
-export default App;
+export default App
