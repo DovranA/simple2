@@ -1,0 +1,31 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    span{
+    position: relative;
+    border: 1px solid red;
+        .filterDiv{
+            position: absolute;
+            width: 12vw;
+            right: 0;
+            border: 1px solid gray;
+            background: white;
+            z-index: 2;
+            border-radius: 0.4rem;
+            padding: 0.3rem;
+            ul{
+                display: flex;
+                flex-direction:column;
+                li{
+                    padding: 0.4rem 0.6rem;
+                    border-radius: 0.3rem;
+                    white-space: nowrap;
+                    &:hover{
+                        background: rgb(236, 236, 236);
+                    }
+                }
+            }
+        }
+    }
+}

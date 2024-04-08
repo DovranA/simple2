@@ -1,13 +1,15 @@
-import Card from './VidCard'
-import styles from './styles.module.scss'
+import { PinnedVideos } from "../../types/home";
+import { TopVideo } from "../../types/topUsers";
+import Card from "./VidCard";
+import styles from "./styles.module.scss";
 
-const VideoCards = ({
-  children,
-  density,
-}: {
-  children: any
-  density: number
-}) => {
+type Props = {
+  children: any;
+  density: number;
+  data: TopVideo[];
+};
+
+const VideoCards = ({ children, density, data }: Props) => {
   return (
     <div className={styles.content}>
       {children}
@@ -17,14 +19,16 @@ const VideoCards = ({
           gridTemplateColumns: `repeat(${density}, minmax(0, 1fr))`,
         }}
       >
-        <Card style={{ height: `${density === 4 ? 30 : 60}vh` }} />
-        <Card style={{ height: `${density === 4 ? 30 : 60}vh` }} />
-        <Card style={{ height: `${density === 4 ? 30 : 60}vh` }} />
-        <Card style={{ height: `${density === 4 ? 30 : 60}vh` }} />
-        <Card style={{ height: `${density === 4 ? 30 : 60}vh` }} />
+        {data.map((item) => (
+          <Card
+            info={item}
+            key={item.id}
+            style={{ height: `${density === 4 ? 30 : 60}vh` }}
+          />
+        ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default VideoCards
+export default VideoCards;

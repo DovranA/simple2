@@ -11,13 +11,11 @@ import styles from './style.module.scss'
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 import { useAppSelector } from '../../../../app/hooks'
 import { SelectHomeData } from '../../../../features/homeSlice'
-const Slider = () => {
-  const data = useAppSelector(SelectHomeData)
-
+const Slider = ({ image }: { image: { src: string }[] }) => {
   return (
     <section className={styles.slider}>
       <Container>
-        {data.banner.images.map((item: any, idx: number) => (
+        {image.map((item: any, idx: number) => (
           <img src={item.img} alt={String(idx)} key={idx} />
         ))}
       </Container>

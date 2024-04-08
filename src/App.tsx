@@ -1,6 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import 'bootstrap-icons/font/bootstrap-icons.css'
-
 import './App.css'
 import SharedLayout from './pages/SharedLayout'
 import Home from './pages/Home'
@@ -8,6 +7,7 @@ import About from './pages/about'
 import Videos from './pages/Videos'
 import TopUsers from './pages/TopUsers'
 import TopVideos from './pages/TopVideos'
+import Brands from './pages/Brands'
 
 function App() {
   return (
@@ -19,6 +19,7 @@ function App() {
           <Route path='/about' element={<About />} />
           <Route path='/topusers' element={<TopUsers />} />
           <Route path='/topvideos' element={<TopVideos />} />
+          <Route path='/brands' element={<Brands />} />
         </Route>
       </Routes>
     </BrowserRouter>
