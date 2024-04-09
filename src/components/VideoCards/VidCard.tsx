@@ -7,29 +7,31 @@ import { TopVideo } from '../../types/topUsers'
 import moment from 'moment'
 import { motion } from 'framer-motion'
 import { useAppDispatch } from '../../app/hooks'
-import { setPlayerModal } from '../../features/videoSlice'
+import { setPlayerModal, setPlayerVideos } from '../../features/videoSlice'
 
 type Props = {
   style: any
-  info: TopVideo
+  info: TopVideo, 
+  data: TopVideo[]
 }
-const Card = ({ style, info }: Props) => {
+const Card = ({ style, info, data }: Props) => {
   const dispatch = useAppDispatch()
-  console.log(info);
   
   return (
-    <div onClick={()=> dispatch(setPlayerModal())} className={`${styles.cardContain}`} style={style}>
-      <div className={styles.btn}>
+    <div  className={`${styles.cardContain}`} style={style}>
+      <div  className={styles.btn}>
         <BsPlayFill className={styles.icon} />
         <span className={styles.blur}></span>
       </div>
-      <img src={info.image_path} alt='' />
+      <img onClick={()=> {dispatch(
+        setPlayerModal())
+        dispatch(setPlayerVideos(data))
+      }} src={info.image_path} alt='' />
       <motion.div
         initial={{ y: 38 }}
         whileHover={{ y: 0 }}
         className={styles.info}
       >
-        {/* <div className={styles.bg}></div> */}
         <p>{info.title}</p>
         <div className={style.about}>
           <span className={styles.date}>

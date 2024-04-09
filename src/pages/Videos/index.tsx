@@ -16,13 +16,13 @@ const Videos = () => {
     <div className="container">
       <TopLink location="Wideolar" />
       <Categories current={current} setCurrent={changeCurrent} />
-      <VideoCards density={density}>
+      {/* <VideoCards density={density}>
         <TopCards
           title="Ahlisi(123456)"
           density={density}
           setDensity={setDensity}
         />
-      </VideoCards>
+      </VideoCards> */}
     </div>
   );
 };

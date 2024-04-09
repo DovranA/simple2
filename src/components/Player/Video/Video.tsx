@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import styles from './style.module.scss'
+import { TopVideo } from '../../../types/topUsers'
 type Props = {
   videocontent: any
   setPlay: (prev: any) => void
@@ -47,6 +48,7 @@ const Video = ({ videocontent, options, setPlay }: Props) => {
       }
     }
   }, [options])
+  
   return (
     <div className={styles.video}>
       <video
