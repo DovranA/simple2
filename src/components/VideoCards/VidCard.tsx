@@ -6,14 +6,23 @@ import LikeBtn from '../Like/LikeBtn'
 import { TopVideo } from '../../types/topUsers'
 import moment from 'moment'
 import { motion } from 'framer-motion'
+import { useAppDispatch } from '../../app/hooks'
+import { setPlayerModal } from '../../features/videoSlice'
 
 type Props = {
   style: any
   info: TopVideo
 }
 const Card = ({ style, info }: Props) => {
+  const dispatch = useAppDispatch()
+  console.log(info)
+
   return (
-    <div className={`${styles.cardContain}`} style={style}>
+    <div
+      onClick={() => dispatch(setPlayerModal())}
+      className={`${styles.cardContain}`}
+      style={style}
+    >
       <div className={styles.btn}>
         <BsPlayFill className={styles.icon} />
         <span className={styles.blur}></span>

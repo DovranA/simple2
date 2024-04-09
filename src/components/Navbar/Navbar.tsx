@@ -8,6 +8,9 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Modal from '../Modals'
 import { useNavigate } from 'react-router-dom'
+import Player from '../Player'
+import { useAppSelector } from '../../app/hooks'
+import { SelectPlayerModal } from '../../features/videoSlice'
 const Navbar = () => {
   const navigate = useNavigate()
   const [options, setOptions] = useState<boolean>(false)
@@ -21,9 +24,13 @@ const Navbar = () => {
     setInput(e.target.value)
   }
 
+  const isPlayer = useAppSelector(SelectPlayerModal)
+
   return (
     <nav className={styles.navbar}>
       {modal && <Modal setModal={setModal} type={modalType} onOff={modal} />}
+      {isPlayer ? <Player /> : null}
+
       <span>
         <img src={logo} alt='logo' />
       </span>

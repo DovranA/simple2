@@ -6,7 +6,6 @@ import ThinContainer from '../../components/ThinContainer'
 import { useEffect } from 'react'
 import { SelectHomeData, mainPageFetch } from '../../features/homeSlice'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
-import Player from '../../components/Player'
 const Home = () => {
   const dispatch = useAppDispatch()
   const data = useAppSelector(SelectHomeData)
@@ -20,7 +19,7 @@ const Home = () => {
       <ThinContainer
         img={data.topusers.image}
         title='Top Ulanjylar'
-        btnTitle={data.topusers.total}
+        btnTitle='Hemmesi'
         link='topusers'
       />
       <Choosens data={data.saylananlar} />
@@ -34,7 +33,6 @@ const Home = () => {
         <ThinContainer
           img={data.trends.image}
           title='Trendlar'
-          link='trends'
           btnTitle={data.trends.total}
         />
         <ThinContainer
@@ -53,7 +51,7 @@ const Home = () => {
 
       <Pinned data={data.pinnedVideos} />
 
-      {false ? <Player /> : null}
+      {/* {true ? <Player /> : null} */}
     </div>
   )
 }

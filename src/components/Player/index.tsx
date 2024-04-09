@@ -15,6 +15,9 @@ import { LiaDownloadSolid } from 'react-icons/lia'
 import { img1 } from '../../assets'
 import { GoScreenFull } from 'react-icons/go'
 import Video from './Video/Video'
+import { useAppDispatch, useAppSelector } from '../../app/hooks'
+import { setPlayerModal } from '../../features/videoSlice'
+import { SelectHomeData } from '../../features/homeSlice'
 const Player = () => {
   const [current, setCurrent] = useState(0)
   const [rand, setRand] = useState(0)
@@ -24,6 +27,9 @@ const Player = () => {
   const [volume, setVolume] = useState(0.5)
   const playerRef = useRef<HTMLDivElement>(null)
   const videospace = useRef<HTMLDivElement>(null)
+  const dispatch = useAppDispatch()
+  const videoData = useAppSelector(SelectHomeData)
+  const [videarr, setVideoArr] =useState(videoData.pinnedVideos.detail) 
   const myVideoData = [
     {
       id: 300,
@@ -92,6 +98,7 @@ const Player = () => {
       tabIndex={-1}
       onKeyDown={handleKey}
       ref={videospace}
+      
     >
       <span className={styles.videoSpace}>
         <span className={styles.search}>
@@ -99,7 +106,8 @@ const Player = () => {
           <CiSearch />
         </span>
         <div className={styles.app__videos} ref={playerRef}>
-          {myVideoData.map((item, idx: number) => {
+          {videarr.map((item, idx: number) => {
+          // {myVideoData.map((item, idx: number) => {
             return (
               <Video
                 setPlay={() => setPalying(!playing)}
@@ -116,7 +124,7 @@ const Player = () => {
           })}
         </div>
         <div className={`${styles.contrs} ${styles.left}`}>
-          <span className={`${styles.icon} ${styles.colse}`}>
+          <span onClick={() => dispatch(setPlayerModal())} className={`${styles.icon} ${styles.colse}`}>
             <IoClose size={40} />
           </span>
           <div className={styles.arrows}>
