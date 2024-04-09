@@ -1,5 +1,3 @@
-
-
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./App.css";
@@ -17,10 +15,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-
         <Route path="/" element={<SharedLayout />}>
-          <Route index element={<h2>Home</h2>} />
-          {/* <Route index element={<Home />} /> */}
+          <Route index element={<Home />} />
           <Route path="/videos" element={<Videos />} />
           <Route path="/about" element={<About />} />
           <Route path="/topusers" element={<TopUsers />} />
@@ -31,7 +27,7 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -85,7 +85,6 @@ export const {
 
 export default homeSlice.reducer
 
-export const SelectPlayerModal = (state:RootState) => state.home.playerModal
 
 export const SelectHomeData = (state:RootState) => state.home.data
 

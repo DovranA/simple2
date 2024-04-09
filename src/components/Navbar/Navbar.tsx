@@ -8,6 +8,9 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Modal from "../Modals";
 import { useNavigate } from "react-router-dom";
+import Player from "../Player";
+import { useAppSelector } from "../../app/hooks";
+import { SelectPlayerModal } from "../../features/videoSlice";
 const Navbar = () => {
   const navigate = useNavigate();
   const [options, setOptions] = useState<boolean>(false);
@@ -21,9 +24,16 @@ const Navbar = () => {
     setInput(e.target.value);
   };
 
+  const isPlayer = useAppSelector(SelectPlayerModal)
+
   return (
     <nav className={styles.navbar}>
       {modal && <Modal setModal={setModal} type={modalType} onOff={modal} />}
+      {isPlayer ? 
+    <Player/>:
+    null  
+    }
+      
       <span>
         <img src={logo} alt="logo" />
       </span>
@@ -35,8 +45,8 @@ const Navbar = () => {
         <NotificationBtn
           count={100}
           onClick={() => {
-            setModal(!modal)
-            setModalType('notice')
+            setModal(!modal);
+            setModalType("notice");
           }}
         />
         <div
@@ -51,16 +61,9 @@ const Navbar = () => {
           <motion.ul initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
             <li
               onClick={() => {
-<<<<<<< HEAD
                 setModal(!modal);
                 setModalType("login");
-
                 setOptions(!options);
-=======
-                setModal(!modal)
-                setModalType('login')
-                setOptions(!options)
->>>>>>> eada75df65b6cf520d3c229e2534ff61e5fb73cb
               }}
             >
               <BiUser size={23} />
