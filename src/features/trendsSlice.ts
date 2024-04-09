@@ -26,6 +26,7 @@ export const trendsPageFetch = createAsyncThunk(
       const res = await axios.get(
         `https://dev.tmbiz.info/api/videos/trends?by=${by}&startfrom=${startfrom}&limit=${limit}`
       )
+      console.log(res.data)
       return res.data
     } catch (error) {
       console.log(error)

@@ -1,4 +1,4 @@
-import { videos } from './global'
+import { video } from './global'
 
 export type Banner = {
   images: any[]
@@ -6,7 +6,7 @@ export type Banner = {
 type Data = {
   banner: Banner
   totalTrends: number
-  videos: videos[]
+  videos: video[]
 }
 export type InitialTrends = {
   loading: boolean

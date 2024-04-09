@@ -3,19 +3,18 @@ import styles from './styles.module.scss'
 import { LuEye } from 'react-icons/lu'
 import { FiDownload } from 'react-icons/fi'
 import LikeBtn from '../Like/LikeBtn'
-import { TopVideo } from '../../types/topUsers'
 import moment from 'moment'
 import { motion } from 'framer-motion'
 import { useAppDispatch } from '../../app/hooks'
 import { setPlayerModal } from '../../features/videoSlice'
+import { video } from '../../types/global'
 
 type Props = {
-  style: any
-  info: TopVideo
+  style?: any
+  info: video
 }
 const Card = ({ style, info }: Props) => {
   const dispatch = useAppDispatch()
-  console.log(info)
 
   return (
     <div

@@ -1,4 +1,4 @@
-export type videos = {
+export type video = {
   id: number
   videofile: string
   image_path: string

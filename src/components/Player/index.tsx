@@ -29,7 +29,7 @@ const Player = () => {
   const videospace = useRef<HTMLDivElement>(null)
   const dispatch = useAppDispatch()
   const videoData = useAppSelector(SelectHomeData)
-  const [videarr, setVideoArr] =useState(videoData.pinnedVideos.detail) 
+  const [videarr, setVideoArr] = useState(videoData.pinnedVideos.detail)
   const myVideoData = [
     {
       id: 300,
@@ -98,7 +98,6 @@ const Player = () => {
       tabIndex={-1}
       onKeyDown={handleKey}
       ref={videospace}
-      
     >
       <span className={styles.videoSpace}>
         <span className={styles.search}>
@@ -107,14 +106,14 @@ const Player = () => {
         </span>
         <div className={styles.app__videos} ref={playerRef}>
           {videarr.map((item, idx: number) => {
-          // {myVideoData.map((item, idx: number) => {
+            // {myVideoData.map((item, idx: number) => {
             return (
               <Video
                 setPlay={() => setPalying(!playing)}
                 key={idx}
                 videocontent={item}
                 options={{
-                  currentId: myVideoData[current].id,
+                  currentId: videarr[current].id,
                   muted,
                   playing,
                   volume,
@@ -124,7 +123,10 @@ const Player = () => {
           })}
         </div>
         <div className={`${styles.contrs} ${styles.left}`}>
-          <span onClick={() => dispatch(setPlayerModal())} className={`${styles.icon} ${styles.colse}`}>
+          <span
+            onClick={() => dispatch(setPlayerModal())}
+            className={`${styles.icon} ${styles.colse}`}
+          >
             <IoClose size={40} />
           </span>
           <div className={styles.arrows}>

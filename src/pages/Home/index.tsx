@@ -33,6 +33,7 @@ const Home = () => {
         <ThinContainer
           img={data.trends.image}
           title='Trendlar'
+          link='trends'
           btnTitle={data.trends.total}
         />
         <ThinContainer
