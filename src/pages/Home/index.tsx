@@ -20,7 +20,7 @@ const Home = () => {
       <ThinContainer
         img={data.topusers.image}
         title='Top Ulanjylar'
-        btnTitle='Hemmesi'
+        btnTitle={data.topusers.total}
         link='topusers'
       />
       <Choosens data={data.saylananlar} />
@@ -34,8 +34,8 @@ const Home = () => {
         <ThinContainer
           img={data.trends.image}
           title='Trendlar'
+          link='trends'
           btnTitle={data.trends.total}
-          link='topusers'
         />
         <ThinContainer
           img={data.brands.image}

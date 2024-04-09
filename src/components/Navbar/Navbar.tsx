@@ -1,35 +1,35 @@
-import styles from "./navbar.module.scss";
-import { logo } from "../../assets";
-import NotificationBtn from "./NotificationBtn";
-import { BiUser } from "react-icons/bi";
-import { GoVideo } from "react-icons/go";
-import { MdOutlineLogout } from "react-icons/md";
-import { useState } from "react";
-import { motion } from "framer-motion";
-import Modal from "../Modals";
-import { useNavigate } from "react-router-dom";
+import styles from './navbar.module.scss'
+import { logo } from '../../assets'
+import NotificationBtn from './NotificationBtn'
+import { BiUser } from 'react-icons/bi'
+import { GoVideo } from 'react-icons/go'
+import { MdOutlineLogout } from 'react-icons/md'
+import { useState } from 'react'
+import { motion } from 'framer-motion'
+import Modal from '../Modals'
+import { useNavigate } from 'react-router-dom'
 const Navbar = () => {
-  const navigate = useNavigate();
-  const [options, setOptions] = useState<boolean>(false);
-  const [modal, setModal] = useState<boolean>(false);
-  const [modalType, setModalType] = useState<string>("");
-  const [input, setInput] = useState("");
+  const navigate = useNavigate()
+  const [options, setOptions] = useState<boolean>(false)
+  const [modal, setModal] = useState<boolean>(false)
+  const [modalType, setModalType] = useState<string>('')
+  const [input, setInput] = useState('')
   const handleChange = (e: any) => {
     if (input.length < 1) {
-      navigate("/search");
+      navigate('/search')
     }
-    setInput(e.target.value);
-  };
+    setInput(e.target.value)
+  }
 
   return (
     <nav className={styles.navbar}>
       {modal && <Modal setModal={setModal} type={modalType} onOff={modal} />}
       <span>
-        <img src={logo} alt="logo" />
+        <img src={logo} alt='logo' />
       </span>
       <div className={styles.searchDiv}>
-        <input type="text" onChange={handleChange} placeholder="Gozle" />
-        <i className="bi bi-search"></i>
+        <input type='text' onChange={handleChange} placeholder='Gozle' />
+        <i className='bi bi-search'></i>
       </div>
       <div className={styles.right}>
         <NotificationBtn
@@ -42,25 +42,18 @@ const Navbar = () => {
         <div
           className={styles.avatar}
           onClick={() => {
-            setOptions((prev) => !prev);
+            setOptions((prev) => !prev)
           }}
         >
-          <img src="/card1.png" alt="" />
+          <img src='/card1.png' alt='' />
         </div>
         {options && (
           <motion.ul initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
             <li
               onClick={() => {
-<<<<<<< HEAD
-                setModal(!modal);
-                setModalType("login");
-
-                setOptions(!options);
-=======
                 setModal(!modal)
                 setModalType('login')
                 setOptions(!options)
->>>>>>> eada75df65b6cf520d3c229e2534ff61e5fb73cb
               }}
             >
               <BiUser size={23} />
@@ -68,9 +61,9 @@ const Navbar = () => {
             </li>
             <li
               onClick={() => {
-                setModal(!modal);
-                setModalType("addVideo");
-                setOptions(!options);
+                setModal(!modal)
+                setModalType('addVideo')
+                setOptions(!options)
               }}
             >
               <GoVideo size={23} /> Wideo goshmak
@@ -83,7 +76,7 @@ const Navbar = () => {
         )}
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar
