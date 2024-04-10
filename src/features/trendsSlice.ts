@@ -26,7 +26,6 @@ export const trendsPageFetch = createAsyncThunk(
       const res = await axios.get(
         `https://dev.tmbiz.info/api/videos/trends?by=${by}&startfrom=${startfrom}&limit=${limit}`
       )
-      console.log(res.data)
       return res.data
     } catch (error) {
       console.log(error)
@@ -46,8 +45,10 @@ const trendsSlice = createSlice({
       })
       .addCase(trendsPageFetch.fulfilled, (state, action) => {
         state.loading = false
-
-        state.data = action.payload
+        // console.log(state.data.videos.length % 12 === 0)
+        if (state.data.videos.length) {
+          state.data.videos = [...state.data.videos, ...action.payload.videos]
+        } else state.data = action.payload
       })
       .addCase(trendsPageFetch.rejected, (state, action) => {
         state.loading = false
