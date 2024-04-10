@@ -5,17 +5,16 @@ import { FiDownload } from 'react-icons/fi'
 import LikeBtn from '../Like/LikeBtn'
 import moment from 'moment'
 import { motion } from 'framer-motion'
+import { video } from '../../types/global'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { useAppDispatch } from '../../app/hooks'
 import { setPlayerModal } from '../../features/videoSlice'
-import { video } from '../../types/global'
-
 type Props = {
   style?: any
   info: video
 }
 const Card = ({ style, info }: Props) => {
   const dispatch = useAppDispatch()
-
   return (
     <div
       onClick={() => dispatch(setPlayerModal())}
@@ -26,13 +25,12 @@ const Card = ({ style, info }: Props) => {
         <BsPlayFill className={styles.icon} />
         <span className={styles.blur}></span>
       </div>
-      <img src={info.image_path} alt='' />
+      <LazyLoadImage src={info.image_path} effect='blur' />
       <motion.div
         initial={{ y: 38 }}
         whileHover={{ y: 0 }}
         className={styles.info}
       >
-        {/* <div className={styles.bg}></div> */}
         <p>{info.title}</p>
         <div className={style.about}>
           <span className={styles.date}>

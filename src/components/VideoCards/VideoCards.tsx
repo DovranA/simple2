@@ -1,13 +1,12 @@
-import { PinnedVideos } from "../../types/home";
-import { TopVideo } from "../../types/topUsers";
-import Card from "./VidCard";
-import styles from "./styles.module.scss";
+import { video } from '../../types/global'
+import Card from './VidCard'
+import styles from './styles.module.scss'
 
 type Props = {
-  children: any;
-  density: number;
-  data: TopVideo[];
-};
+  children: any
+  density: number
+  data: video[]
+}
 
 const VideoCards = ({ children, density, data }: Props) => {
   return (
@@ -28,7 +27,7 @@ const VideoCards = ({ children, density, data }: Props) => {
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default VideoCards;
+export default VideoCards

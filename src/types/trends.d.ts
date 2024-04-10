@@ -12,4 +12,9 @@ export type InitialTrends = {
   loading: boolean
   error: any
   data: Data
+  // options: {
+  //   by: string
+  //   startfrom: number
+  //   limit: number
+  // }
 }

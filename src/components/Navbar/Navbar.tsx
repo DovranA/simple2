@@ -31,7 +31,7 @@ const Navbar = () => {
       {modal && <Modal setModal={setModal} type={modalType} onOff={modal} />}
       {isPlayer ? <Player /> : null}
 
-      <span>
+      <span onClick={() => navigate('/')}>
         <img src={logo} alt='logo' />
       </span>
       <div className={styles.searchDiv}>
