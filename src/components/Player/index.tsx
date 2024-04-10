@@ -77,7 +77,7 @@ const Player = () => {
   }, [rand])
   const handleLike = async (id:number) => {
     try {
-      const res = await axios.put(`/api/videos/${id}/like`,{
+      const res = await axios.put(`https://dev.tmbiz.info/api/videos/${id}/like`,{
         withCredentials: true
       })
       if(openPlayerLock === "pinned") {

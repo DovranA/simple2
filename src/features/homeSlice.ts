@@ -47,7 +47,7 @@ const initialState:InitialHome = {
 
 export const mainPageFetch = createAsyncThunk("homepage", async () => {
     try {
-        const res = await axios.get("/api/videos/mainpage")
+        const res = await axios.get("https://dev.tmbiz.info/api/videos/mainpage")
         return res.data
     } catch (error) {
         console.log(error);

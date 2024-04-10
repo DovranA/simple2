@@ -20,7 +20,7 @@ const Card = ({ style, info, data, likeFunc }: Props) => {
   const dispatch = useAppDispatch()
   const handleLike = async (id:number) => {
     try {
-      const res = await axios.put(`/api/videos/${id}/like`,{
+      const res = await axios.put(`https://dev.tmbiz.info/api/videos/${id}/like`,{
         withCredentials: true
       })
       dispatch(likeFunc({id: id, like: res.data.likeNum}))
