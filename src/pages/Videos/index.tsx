@@ -1,17 +1,17 @@
-import { useState } from "react";
-import TopLink from "../../components/TopLink/TopLink";
-import Categories from "./components/Categories";
+import { useState } from 'react'
+import TopLink from '../../components/TopLink/TopLink'
+import Categories from './components/Categories'
 const Videos = () => {
-  const [current, setCurrent] = useState(0);
+  const [current, setCurrent] = useState(0)
   const changeCurrent = (idx: number) => {
     if (current >= 0 && current < 10) {
-      setCurrent(idx);
+      setCurrent(idx)
     }
-  };
+  }
 
   return (
-    <div className="container">
-      <TopLink location="Wideolar" />
+    <div className='container'>
+      <TopLink location='Wideolar' />
       <Categories current={current} setCurrent={changeCurrent} />
       {/* <VideoCards density={density}>
         <TopCards
@@ -21,7 +21,7 @@ const Videos = () => {
         />
       </VideoCards> */}
     </div>
-  );
-};
+  )
+}
 
-export default Videos;
+export default Videos

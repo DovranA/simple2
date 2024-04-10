@@ -53,12 +53,16 @@ nav {
   border-radius: 0.5rem;
   overflow: hidden;
   position: relative;
-  img {
-    position: absolute;
+  span {
+    height: 100%;
     width: 100%;
-    object-fit: cover;
-    object-position: center;
-    z-index: 0;
+    img {
+      position: absolute;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 0;
+    }
   }
   .btn {
     right: 10px;

@@ -1,18 +1,9 @@
-import BrandCard from "./BrandCard";
-import styles from "./styles.module.scss";
-const BrandsCards = () => {
-  return (
-    <div className={styles.brandCards}>
-      <BrandCard />
-      <BrandCard />
-      <BrandCard />
-      <BrandCard />
-      <BrandCard />
-      <BrandCard />
-      <BrandCard />
-      <BrandCard />
-    </div>
-  );
-};
+import styles from './styles.module.scss'
+type Props = {
+  children: React.ReactNode
+}
+const BrandsCards = ({ children }: Props) => {
+  return <div className={styles.brandCards}>{children}</div>
+}
 
-export default BrandsCards;
+export default BrandsCards

@@ -16,15 +16,22 @@ import { img1 } from '../../assets'
 import { GoScreenFull } from 'react-icons/go'
 import Video from './Video/Video'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
-import { SlctPlayerOpenLock, VideoData, setLikeVideo, setPlayerModal, setPlayerVideos } from '../../features/videoSlice'
+import {
+  SlctPlayerOpenLock,
+  VideoData,
+  setLikeVideo,
+  setPlayerModal,
+  setPlayerVideos,
+} from '../../features/videoSlice'
 import axios from 'axios'
 import { setPinnedLike } from '../../features/homeSlice'
 const Player = () => {
   const [current, setCurrent] = useState(0)
   const [rand, setRand] = useState(0)
   const [fullScreen, setFullScreen] = useState(false)
-  const [playing, setPalying] = useState(false)
-  const [muted] = useState(false)
+  const [playing, setPalying] = useState(true)
+  const [muted, setMuted] = useState(false)
+  const [spin, setSpin] = useState<number>(0)
   const [volume] = useState(0.5)
   const playerRef = useRef<HTMLDivElement>(null)
   const videospace = useRef<HTMLDivElement>(null)
@@ -44,9 +51,16 @@ const Player = () => {
         e.preventDefault()
         setPalying((prev) => !prev)
         break
+      case 'ArrowLeft':
+        e.preventDefault()
+        setSpin(-1)
+        break
+      case 'ArrowRight':
+        e.preventDefault()
+        setSpin(1)
+        break
       case 'ArrowUp':
         e.preventDefault()
-
         setCurrent((prev) => (prev > 0 ? --prev : prev))
         setRand(Math.random())
         break
@@ -54,6 +68,10 @@ const Player = () => {
         e.preventDefault()
         setCurrent((prev) => (prev < videosArr.length - 1 ? ++prev : prev))
         setRand(Math.random())
+        break
+      case 'KeyM':
+        e.preventDefault()
+        setMuted((prev) => !prev)
         break
     }
   }
@@ -75,20 +93,19 @@ const Player = () => {
       inline: 'start',
     })
   }, [rand])
-const apiUrl = import.meta.env.VITE_API_PATH
+  // const apiUrl = import.meta.env.VITE_API_PATH
 
-  const handleLike = async (id:number) => {
+  const handleLike = async (id: number) => {
     try {
-const res = await axios.put(apiUrl +`/api/videos/${id}/like`,{
-        withCredentials: true
+      const res = await axios.put(`/api/videos/${id}/like`, {
+        withCredentials: true,
       })
-      if(openPlayerLock === "pinned") {
-        dispatch(setPinnedLike({id: id, like:res.data.likeNum}))
+      if (openPlayerLock === 'pinned') {
+        dispatch(setPinnedLike({ id: id, like: res.data.likeNum }))
       }
-      dispatch(setLikeVideo({id: id, like: res.data.likeNum}))
-      
+      dispatch(setLikeVideo({ id: id, like: res.data.likeNum }))
     } catch (error) {
-      console.log(error);
+      console.log(error)
     }
   }
   return (
@@ -104,7 +121,7 @@ const res = await axios.put(apiUrl +`/api/videos/${id}/like`,{
           <CiSearch />
         </span>
         <div className={styles.app__videos} ref={playerRef}>
-          {videosArr.map((item:any, idx: number) => {
+          {videosArr.map((item: any, idx: number) => {
             return (
               <Video
                 setPlay={() => setPalying(!playing)}
@@ -115,18 +132,21 @@ const res = await axios.put(apiUrl +`/api/videos/${id}/like`,{
                   muted,
                   playing,
                   volume,
+                  spin,
+                  setSpin: (value: number) => setSpin(value),
                 }}
               />
             )
           })}
         </div>
         <div className={`${styles.contrs} ${styles.left}`}>
-          <span onClick={() => {
-            dispatch(setPlayerModal())
-          dispatch(setPlayerVideos([]))
-          }
-            
-            } className={`${styles.icon} ${styles.colse}`}>
+          <span
+            onClick={() => {
+              dispatch(setPlayerModal())
+              dispatch(setPlayerVideos([]))
+            }}
+            className={`${styles.icon} ${styles.colse}`}
+          >
             <IoClose size={40} />
           </span>
           <div className={styles.arrows}>
@@ -154,7 +174,12 @@ const res = await axios.put(apiUrl +`/api/videos/${id}/like`,{
           </div>
           <div className={styles.someContrs}>
             <div className={styles.volume}>
-              <span className={styles.icon}>
+              <span
+                className={styles.icon}
+                onClick={() => {
+                  setMuted((prev) => !prev)
+                }}
+              >
                 <MdVolumeUp size={40} />
               </span>
             </div>
@@ -172,7 +197,10 @@ const res = await axios.put(apiUrl +`/api/videos/${id}/like`,{
           </span>
           <div className={styles.actions}>
             <span className={styles.icon}>
-              <LikeBtn onClick={() => handleLike(videosArr[current].id)} size={30} />
+              <LikeBtn
+                onClick={() => handleLike(videosArr[current].id)}
+                size={30}
+              />
             </span>
             <p>{videosArr[current].like_count}</p>
             <span
@@ -201,7 +229,7 @@ const res = await axios.put(apiUrl +`/api/videos/${id}/like`,{
           <div className={styles.someContrs}>
             <span
               className={styles.icon}
-              onClick={() => {  
+              onClick={() => {
                 console.log('first')
               }}
               style={{ visibility: 'hidden' }}

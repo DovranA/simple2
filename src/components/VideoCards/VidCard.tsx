@@ -3,43 +3,52 @@ import styles from './styles.module.scss'
 import { LuEye } from 'react-icons/lu'
 import { FiDownload } from 'react-icons/fi'
 import LikeBtn from '../Like/LikeBtn'
-import { TopVideo } from '../../types/topUsers'
 import moment from 'moment'
 import { motion } from 'framer-motion'
+import { video } from '../../types/global'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { useAppDispatch } from '../../app/hooks'
-import { openPlayerLock, setPlayerModal, setPlayerVideos } from '../../features/videoSlice'
+import {
+  openPlayerLock,
+  setPlayerModal,
+  setPlayerVideos,
+} from '../../features/videoSlice'
 import axios from 'axios'
-const apiUrl = import.meta.env.VITE_API_PATH
+// const apiUrl = import.meta.env.VITE_API_PATH
 
 type Props = {
   style: any
-  info: TopVideo, 
-  data: TopVideo[],
-  likeFunc:any
+  info: video
+  data?: video[]
+  likeFunc?: any
 }
 const Card = ({ style, info, data, likeFunc }: Props) => {
   const dispatch = useAppDispatch()
-  const handleLike = async (id:number) => {
+  const handleLike = async (id: number) => {
     try {
-      const res = await axios.put(apiUrl+`/api/videos/${id}/like`,{
-        withCredentials: true
+      const res = await axios.put(`/api/videos/${id}/like`, {
+        withCredentials: true,
       })
-      dispatch(likeFunc({id: id, like: res.data.likeNum}))
+      dispatch(likeFunc({ id: id, like: res.data.likeNum }))
     } catch (error) {
-      console.log(error);
+      console.log(error)
     }
   }
   return (
-    <div  className={`${styles.cardContain}`} style={style}>
-      <div  className={styles.btn}>
+    <div className={`${styles.cardContain}`} style={style}>
+      <div className={styles.btn}>
         <BsPlayFill className={styles.icon} />
         <span className={styles.blur}></span>
       </div>
-      <img onClick={()=> {dispatch(
-        setPlayerModal())
-        dispatch(setPlayerVideos(data))
-        dispatch(openPlayerLock("pinned"))
-      }} src={info.image_path} alt='' />
+      <LazyLoadImage
+        src={info?.image_path}
+        effect='blur'
+        onClick={() => {
+          dispatch(setPlayerModal())
+          dispatch(setPlayerVideos({ data, id: info.id }))
+          dispatch(openPlayerLock('pinned'))
+        }}
+      />
       <motion.div
         initial={{ y: 38 }}
         whileHover={{ y: 0 }}
