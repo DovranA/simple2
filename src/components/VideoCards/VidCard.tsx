@@ -14,7 +14,7 @@ import {
   setPlayerVideos,
 } from '../../features/videoSlice'
 import axios from 'axios'
-const apiUrl = import.meta.env.VITE_API_PATH
+// const apiUrl = import.meta.env.VITE_API_PATH
 
 type Props = {
   style: any
@@ -26,7 +26,7 @@ const Card = ({ style, info, data, likeFunc }: Props) => {
   const dispatch = useAppDispatch()
   const handleLike = async (id: number) => {
     try {
-      const res = await axios.put(apiUrl + `/api/videos/${id}/like`, {
+      const res = await axios.put(`/api/videos/${id}/like`, {
         withCredentials: true,
       })
       dispatch(likeFunc({ id: id, like: res.data.likeNum }))
@@ -35,11 +35,7 @@ const Card = ({ style, info, data, likeFunc }: Props) => {
     }
   }
   return (
-    <div
-      onClick={() => dispatch(setPlayerModal())}
-      className={`${styles.cardContain}`}
-      style={style}
-    >
+    <div className={`${styles.cardContain}`} style={style}>
       <div className={styles.btn}>
         <BsPlayFill className={styles.icon} />
         <span className={styles.blur}></span>
@@ -49,7 +45,7 @@ const Card = ({ style, info, data, likeFunc }: Props) => {
         effect='blur'
         onClick={() => {
           dispatch(setPlayerModal())
-          dispatch(setPlayerVideos(data))
+          dispatch(setPlayerVideos({ data, id: info.id }))
           dispatch(openPlayerLock('pinned'))
         }}
       />

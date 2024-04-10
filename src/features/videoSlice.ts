@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { RootState } from '../app/store'
-import { TopVideo } from '../types/topUsers'
+import { video } from '../types/global'
 
 const initialState: any = {
   data: [],
@@ -20,10 +20,18 @@ const playerSlice = createSlice({
       state.lockation = action.payload
     },
     setPlayerVideos: (state, action) => {
-      state.data = action.payload
+      if (action.payload.id) {
+        const findVideo = action.payload.data.find(
+          (item: any) => item.id === action.payload.id
+        )
+        const oldVideo = action.payload.data.filter(
+          (item: any) => item.id !== action.payload.id
+        )
+        state.data = [findVideo, ...oldVideo]
+      } else state.data = action.payload
     },
     setLikeVideo: (state, action) => {
-      let item = state.data.find((i: TopVideo) => i.id === action.payload.id)
+      let item = state.data.find((i: video) => i.id === action.payload.id)
       item.like_count = action.payload.like
     },
   },

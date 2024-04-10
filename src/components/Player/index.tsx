@@ -29,8 +29,9 @@ const Player = () => {
   const [current, setCurrent] = useState(0)
   const [rand, setRand] = useState(0)
   const [fullScreen, setFullScreen] = useState(false)
-  const [playing, setPalying] = useState(false)
+  const [playing, setPalying] = useState(true)
   const [muted, setMuted] = useState(false)
+  const [spin, setSpin] = useState<number>(0)
   const [volume] = useState(0.5)
   const playerRef = useRef<HTMLDivElement>(null)
   const videospace = useRef<HTMLDivElement>(null)
@@ -50,9 +51,16 @@ const Player = () => {
         e.preventDefault()
         setPalying((prev) => !prev)
         break
+      case 'ArrowLeft':
+        e.preventDefault()
+        setSpin(-1)
+        break
+      case 'ArrowRight':
+        e.preventDefault()
+        setSpin(1)
+        break
       case 'ArrowUp':
         e.preventDefault()
-
         setCurrent((prev) => (prev > 0 ? --prev : prev))
         setRand(Math.random())
         break
@@ -60,6 +68,10 @@ const Player = () => {
         e.preventDefault()
         setCurrent((prev) => (prev < videosArr.length - 1 ? ++prev : prev))
         setRand(Math.random())
+        break
+      case 'KeyM':
+        e.preventDefault()
+        setMuted((prev) => !prev)
         break
     }
   }
@@ -81,11 +93,11 @@ const Player = () => {
       inline: 'start',
     })
   }, [rand])
-  const apiUrl = import.meta.env.VITE_API_PATH
+  // const apiUrl = import.meta.env.VITE_API_PATH
 
   const handleLike = async (id: number) => {
     try {
-      const res = await axios.put(apiUrl + `/api/videos/${id}/like`, {
+      const res = await axios.put(`/api/videos/${id}/like`, {
         withCredentials: true,
       })
       if (openPlayerLock === 'pinned') {
@@ -120,6 +132,8 @@ const Player = () => {
                   muted,
                   playing,
                   volume,
+                  spin,
+                  setSpin: (value: number) => setSpin(value),
                 }}
               />
             )

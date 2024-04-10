@@ -53,7 +53,8 @@ nav {
   border-radius: 0.5rem;
   overflow: hidden;
   position: relative;
-  .lazy-load-image-background.blur.lazy-load-image-loaded {
+  span {
+    height: 100%;
     width: 100%;
     img {
       position: absolute;

@@ -24,3 +24,8 @@ export type video = {
   user: number
   category: number
 }
+export type videos = {
+  data: video[]
+  playerModal: boolean
+  lockation: string
+}

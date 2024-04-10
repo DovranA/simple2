@@ -24,7 +24,10 @@ export const trendsPageFetch = createAsyncThunk(
   async ({ by, startfrom, limit }: trendsFetch) => {
     try {
       const res = await axios.get(
-        `https://dev.tmbiz.info/api/videos/trends?by=${by}&startfrom=${startfrom}&limit=${limit}`
+        `/api/videos/trends?by=${by}&startfrom=${startfrom}&limit=${limit}`,
+        {
+          withCredentials: true,
+        }
       )
       console.log(res.data)
       return res.data
