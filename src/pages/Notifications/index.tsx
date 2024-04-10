@@ -1,5 +1,13 @@
-const Notifications = () => {
-  return <div>Notifications</div>;
-};
+import TopLink from '../../components/TopLink/TopLink'
+import Container from './components/Container'
 
-export default Notifications;
+const Notifications = () => {
+  return (
+    <div className='container'>
+      <TopLink location='Bildirisler' />
+      <Container />
+    </div>
+  )
+}
+
+export default Notifications

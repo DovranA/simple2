@@ -1,0 +1,82 @@
+.container {
+  position: absolute;
+  width: 650px;
+  height: 550px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 3rem;
+  border-radius: 2rem;
+  z-index: 4;
+  gap: 15px;
+  .close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+  .header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      margin: 20px 0;
+      font-size: 1.2rem;
+    }
+  }
+  font-size: 1.2rem;
+  .inp {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid gray;
+    padding: 10px;
+    align-items: center;
+    border-radius: 0.5rem;
+    margin: 10px 0;
+    input {
+      width: 100%;
+      font-size: 1.2rem;
+      border: none;
+      outline: none;
+      position: relative;
+      .inpIcon {
+        position: absolute;
+      }
+    }
+  }
+  .option {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    .checkBox {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      input {
+        width: 20px;
+        height: 20px;
+        &:checked {
+          accent-color: #000;
+          background-color: #fff;
+          color: #fff;
+        }
+      }
+    }
+  }
+  button {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    padding: 15px;
+  }
+  .attention {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

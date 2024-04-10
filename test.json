@@ -1,0 +1,683 @@
+{
+	"banner": {
+		"id": 19,
+		"images": [
+			{
+				"img": "https://dev.tmbiz.info//data/banner/images/f1245247-c3c5-4233-94d3-a2a80df9a886.jpg"
+			},
+			{
+				"img": "https://dev.tmbiz.info//data/banner/images/f90f462c-150e-4186-9885-ce19409ce05f.jpg"
+			},
+			{
+				"img": "https://dev.tmbiz.info//data/banner/images/b737123e-9585-400b-b761-8bdb8328fc66.jpg"
+			},
+			{
+				"img": "https://dev.tmbiz.info//data/banner/images/276c1740-5f49-4325-be44-a931d531572c.gif"
+			},
+			{
+				"img": "https://dev.tmbiz.info//data/banner/images/f3f38dcc-46fa-468b-9a2f-2443db9ed946.gif"
+			}
+		],
+		"name": "Main page banner",
+		"external_link": "http://google.com",
+		"internal_link": "",
+		"main_page_banner": true,
+		"top_hashaplar_page_banner": false,
+		"top_videos_page_banner": false,
+		"trends_page_banner": false,
+		"brands_page_banner": false,
+		"contactus_page_banner": false,
+		"saylananlar_page_banner": false,
+		"start": "2024-03-30T16:06:43+05:00",
+		"end": "2024-06-21T16:06:52+05:00"
+	},
+	"topusers": {
+		"position": "top",
+		"image": "https://dev.tmbiz.info//data/mainpage/topulanyjylar/d3df8dd4-53b8-47e8-b947-26205334d7b2.jpg",
+		"total": 11
+	},
+	"saylananlar": {
+		"position": "center",
+		"total": 22,
+		"details": [
+			{
+				"id": 4,
+				"name": "Akar suw",
+				"image": "https://dev.tmbiz.info//data/brands/images/a405192c-b807-46e7-8f03-b1135d82817e.jpg",
+				"total_views": 2000,
+				"video_count": 4,
+				"created_at": "2024-03-30T12:59:17.118178Z"
+			},
+			{
+				"id": 10,
+				"name": "Fitci house",
+				"image": "https://dev.tmbiz.info//data/brands/images/369fb7d9-7ab4-479f-9f1b-f6ef6104a73f.jpg",
+				"total_views": 1620,
+				"video_count": 4,
+				"created_at": "2024-03-30T13:01:51.461027Z"
+			},
+			{
+				"id": 6,
+				"name": "Asmanexpresss",
+				"image": "https://dev.tmbiz.info//data/brands/images/5470c7b6-dab8-48f2-b39d-62e2adc7fc66.jpg",
+				"total_views": 1600,
+				"video_count": 3,
+				"created_at": "2024-03-30T13:00:29.920029Z"
+			},
+			{
+				"id": 14,
+				"name": "Keopatra shoes",
+				"image": "https://dev.tmbiz.info//data/brands/images/b730e97c-4278-42b2-9ae5-6e5366a7fe2c.jpg",
+				"total_views": 1500,
+				"video_count": 3,
+				"created_at": "2024-03-30T13:03:02.146424Z"
+			},
+			{
+				"id": 22,
+				"name": "Vabade tm",
+				"image": "https://dev.tmbiz.info//data/brands/images/909a4537-ca39-41ef-b6b5-516068c5807b.jpg",
+				"total_views": 500,
+				"video_count": 1,
+				"created_at": "2024-03-30T13:06:31.000654Z"
+			},
+			{
+				"id": 13,
+				"name": "Iýermenje",
+				"image": "https://dev.tmbiz.info//data/brands/images/4cd4e2e0-36ef-49ca-b85d-f976e9f8e58e.jpg",
+				"total_views": 1600,
+				"video_count": 4,
+				"created_at": "2024-03-30T13:02:36.400578Z"
+			},
+			{
+				"id": 16,
+				"name": "Kigili Türkmenistan",
+				"image": "https://dev.tmbiz.info//data/brands/images/d16b42e0-283f-4bb4-a0d1-8a83860ac32b.jpg",
+				"total_views": 0,
+				"video_count": 0,
+				"created_at": "2024-03-30T13:03:44.622003Z"
+			},
+			{
+				"id": 11,
+				"name": "Hansoltan Lybaslary",
+				"image": "https://dev.tmbiz.info//data/brands/images/de973ccc-a676-47fe-b59f-e2d7c9cd57de.jpg",
+				"total_views": 0,
+				"video_count": 0,
+				"created_at": "2024-03-30T13:02:07.861427Z"
+			},
+			{
+				"id": 9,
+				"name": "Dürli döner",
+				"image": "https://dev.tmbiz.info//data/brands/images/32627aac-8155-4d1f-a838-c86776ac194f.jpg",
+				"total_views": 0,
+				"video_count": 0,
+				"created_at": "2024-03-30T13:01:33.913664Z"
+			},
+			{
+				"id": 7,
+				"name": "Baby butik",
+				"image": "https://dev.tmbiz.info//data/brands/images/3cd9a63b-aba6-41e9-a1e5-af41a7c39d96.jpg",
+				"total_views": 0,
+				"video_count": 0,
+				"created_at": "2024-03-30T13:00:50.420431Z"
+			},
+			{
+				"id": 15,
+				"name": "Maraton shoes",
+				"image": "https://dev.tmbiz.info//data/brands/images/7dbf3241-d3c1-41a2-9cce-9ecc58020ffb.jpg",
+				"total_views": 0,
+				"video_count": 0,
+				"created_at": "2024-03-30T13:03:15.687253Z"
+			},
+			{
+				"id": 12,
+				"name": "Hosh coffe",
+				"image": "https://dev.tmbiz.info//data/brands/images/29bdd3b1-10f8-476e-8f4d-877654486f85.jpg",
+				"total_views": 0,
+				"video_count": 0,
+				"created_at": "2024-03-30T13:02:21.875682Z"
+			},
+			{
+				"id": 24,
+				"name": "Zyyat_hill_official",
+				"image": "https://dev.tmbiz.info//data/brands/images/a4be7a54-d9ec-4839-89dd-99abb5becb85.jpg",
+				"total_views": 600,
+				"video_count": 3,
+				"created_at": "2024-03-31T11:51:35.019817Z"
+			},
+			{
+				"id": 19,
+				"name": "Silvar tkm",
+				"image": "https://dev.tmbiz.info//data/brands/images/a84126a3-16ae-4e84-9a35-fc0ff93a03cf.jpg",
+				"total_views": 0,
+				"video_count": 0,
+				"created_at": "2024-03-30T13:05:09.078322Z"
+			},
+			{
+				"id": 21,
+				"name": "Täjir Market",
+				"image": "https://dev.tmbiz.info//data/brands/images/cc29bc1a-9bb0-49bd-ad66-c68026db98f8.jpg",
+				"total_views": 0,
+				"video_count": 0,
+				"created_at": "2024-03-30T13:05:38.016742Z"
+			},
+			{
+				"id": 3,
+				"name": "44 tagam",
+				"image": "https://dev.tmbiz.info//data/brands/images/61c9b3fe-b4ac-46c0-bf25-f70908449cc6.jpg",
+				"total_views": 0,
+				"video_count": 0,
+				"created_at": "2024-03-30T09:18:19.121567Z"
+			},
+			{
+				"id": 17,
+				"name": "Nagyşly Güzer",
+				"image": "https://dev.tmbiz.info//data/brands/images/bb0c504d-4473-4067-a1c5-920fd4190aa7.jpg",
+				"total_views": 0,
+				"video_count": 0,
+				"created_at": "2024-03-30T13:04:00.068317Z"
+			},
+			{
+				"id": 20,
+				"name": "Tagamçy",
+				"image": "https://dev.tmbiz.info//data/brands/images/277e67b8-03a2-403a-ba1d-f1593494ed9c.jpg",
+				"total_views": 0,
+				"video_count": 0,
+				"created_at": "2024-03-30T13:05:23.946266Z"
+			},
+			{
+				"id": 5,
+				"name": "Altyn gapy",
+				"image": "https://dev.tmbiz.info//data/brands/images/8ddff523-cf4c-43e4-a4ce-af3dbada9a43.jpg",
+				"total_views": 0,
+				"video_count": 0,
+				"created_at": "2024-03-30T12:59:28.631004Z"
+			},
+			{
+				"id": 18,
+				"name": "Ramsey Türkmenistan",
+				"image": "https://dev.tmbiz.info//data/brands/images/d0e898fe-98ea-44bf-9c88-6f38ff2b0982.jpg",
+				"total_views": 0,
+				"video_count": 0,
+				"created_at": "2024-03-30T13:04:50.723628Z"
+			},
+			{
+				"id": 23,
+				"name": "Keýik Jewelery",
+				"image": "https://dev.tmbiz.info//data/brands/images/37b10fb1-22f2-4bcd-8499-190bcde2e44c.jpg",
+				"total_views": 840,
+				"video_count": 5,
+				"created_at": "2024-03-31T11:44:11.111437Z"
+			},
+			{
+				"id": 8,
+				"name": "Coffechi",
+				"image": "https://dev.tmbiz.info//data/brands/images/edd87bde-96d3-40f4-a5df-63462a5c0d8b.jpg",
+				"total_views": 0,
+				"video_count": 0,
+				"created_at": "2024-03-30T13:01:05.995219Z"
+			}
+		]
+	},
+	"topvideos": {
+		"position": "bottom",
+		"image": "https://dev.tmbiz.info//data/mainpage/topvideos/203d6438-0f8d-4d89-a2ba-34008d72131d.jpg",
+		"total": 490
+	},
+	"trends": {
+		"image": "https://dev.tmbiz.info//data/mainpage/trends/b3310058-7ac8-4e69-b35c-e11ab0daeffc.jpg",
+		"total": 490
+	},
+	"brands": {
+		"image": "https://dev.tmbiz.info//data/mainpage/brands/de21de1b-393c-4e43-91c1-5f00cbf316b8.jpg",
+		"total": 0
+	},
+	"totalvideos": {
+		"image": "https://dev.tmbiz.info//data/mainpage/videos/0ad4d82e-a031-4857-978d-3fe8aaf743d0.jpg",
+		"total": 487
+	},
+	"pinnedVideos": {
+		"total": 11,
+		"detail": [
+			{
+				"id": 39411,
+				"videofile": "https://dev.tmbiz.info///video/1709724368502730925/1709724368502730925.mp4",
+				"image_path": "https://dev.tmbiz.info//data/videos/images/c66e0bc0-e61a-4844-9a35-daaed11b32ce.jpg",
+				"tags": [
+					{
+						"id": 11,
+						"name": "#tmbiz"
+					},
+					{
+						"id": 13,
+						"name": "# Yunus konditer"
+					}
+				],
+				"subcategory": "Azyk haryt goraýjy",
+				"username": "Daşary ýurt tagamlary",
+				"saylananlar": "",
+				"user_avatar": "https://dev.tmbiz.info//data/profile/images/26a2237b-1b2c-4827-ac72-19bdc22a6422.jpg",
+				"download_link": "https://dev.tmbiz.info/api/videos/39411/download",
+				"title": "Yunus konditer",
+				"description": "Test// Yunus konditer\r\nÝerleşýän ýeri:Aşgabat şäheri Gulzemin sowda merkezi \r\nDastawka hyzmaty bar.\r\nHabarlaşmak üçin:\r\n863220066",
+				"location": "Ashgabat",
+				"chekedStatus": true,
+				"cancel": false,
+				"pinned": true,
+				"view_count": 100,
+				"share_count": 10,
+				"like_count": 100,
+				"share_token": "72489790-8ccd-47ba-be72-6d524cb37865",
+				"download_count": 10,
+				"posted_at": "2024-03-29T13:42:41.179328+05:00",
+				"created_at": "2024-03-29T13:42:41.068604+05:00",
+				"updated_at": "2024-03-31T12:44:47.734136+05:00",
+				"is_active": true,
+				"trend": false,
+				"is_vertical": true,
+				"user": 11,
+				"category": 12,
+				"brands": null
+			},
+			{
+				"id": 39350,
+				"videofile": "https://dev.tmbiz.info///video/1709723199279384556/1709723199279384556.mp4",
+				"image_path": "https://dev.tmbiz.info//data/videos/images/26c2c3c9-2c0d-4dfa-8f9d-8fad70ce70b9.jpg",
+				"tags": [
+					{
+						"id": 11,
+						"name": "#tmbiz"
+					},
+					{
+						"id": 13,
+						"name": "# Yunus konditer"
+					}
+				],
+				"subcategory": "Azyk haryt goraýjy",
+				"username": "Online shop",
+				"saylananlar": "",
+				"user_avatar": "https://dev.tmbiz.info//data/profile/images/a06801ec-6f4f-4f63-8cb4-c102e64fd786.jpg",
+				"download_link": "https://dev.tmbiz.info/api/videos/39350/download",
+				"title": "Yunus konditer",
+				"description": "Test// Yunus konditer\r\nÝerleşýän ýeri:Aşgabat şäheri Gulzemin sowda merkezi \r\nDastawka hyzmaty bar.\r\nHabarlaşmak üçin:\r\n863220066",
+				"location": "Ashgabat",
+				"chekedStatus": true,
+				"cancel": false,
+				"pinned": true,
+				"view_count": 100,
+				"share_count": 10,
+				"like_count": 50,
+				"share_token": "72489790-8ccd-47ba-be72-6d524cb37865",
+				"download_count": 10,
+				"posted_at": "2024-03-29T13:42:41.179328+05:00",
+				"created_at": "2024-03-29T13:42:41.068604+05:00",
+				"updated_at": "2024-03-31T16:10:02.017145+05:00",
+				"is_active": true,
+				"trend": false,
+				"is_vertical": true,
+				"user": 31,
+				"category": 12,
+				"brands": null
+			},
+			{
+				"id": 39331,
+				"videofile": "https://dev.tmbiz.info///video/1709722913790495062/1709722913790495062.mp4",
+				"image_path": "https://dev.tmbiz.info//data/videos/images/393152fe-1703-4e45-8ecd-a6486732a479.jpg",
+				"tags": [
+					{
+						"id": 17,
+						"name": "#Keýik jewelery"
+					},
+					{
+						"id": 11,
+						"name": "#tmbiz"
+					}
+				],
+				"subcategory": "Şaý-sepler",
+				"username": "M.Jewellery",
+				"saylananlar": "Keýik Jewelery",
+				"user_avatar": "https://dev.tmbiz.info//data/profile/images/833a166f-db07-4f2d-8146-bc14bfb95d46.jpg",
+				"download_link": "https://dev.tmbiz.info/api/videos/39331/download",
+				"title": "Keýik jewelery",
+				"description": "Test// “Keýik jewelery”\r\nÝerleşýän ýeri: Aşgabat şäheri Çoganly \r\nDastawka hyzmaty bar.\r\nHabarlaşmak üçin:\r\n+99362301111",
+				"location": "Ashgabat",
+				"chekedStatus": true,
+				"cancel": false,
+				"pinned": true,
+				"view_count": 250,
+				"share_count": 100,
+				"like_count": 200,
+				"share_token": "72489790-8ccd-47ba-be72-6d524cb37865",
+				"download_count": 101,
+				"posted_at": "2024-03-29T13:42:41.179328+05:00",
+				"created_at": "2024-03-29T13:42:41.068604+05:00",
+				"updated_at": "2024-04-03T11:14:17.760523+05:00",
+				"is_active": true,
+				"trend": false,
+				"is_vertical": true,
+				"user": 32,
+				"category": 6,
+				"brands": null
+			},
+			{
+				"id": 39403,
+				"videofile": "https://dev.tmbiz.info///video/1709724223514844434/1709724223514844434.mp4",
+				"image_path": "https://dev.tmbiz.info//data/videos/images/3659b3a5-aad2-40e9-9401-0d3ed1148fc2.jpg",
+				"tags": [
+					{
+						"id": 10,
+						"name": "#Zyýat_hill_official"
+					},
+					{
+						"id": 11,
+						"name": "#tmbiz"
+					}
+				],
+				"subcategory": "Azyk haryt goraýjy",
+				"username": "Tort we Konditer önümleri",
+				"saylananlar": "",
+				"user_avatar": "https://dev.tmbiz.info//data/profile/images/6182147a-6293-42e0-be00-2ef17cd030ea.jpg",
+				"download_link": "https://dev.tmbiz.info/api/videos/39403/download",
+				"title": "Zyýat_hill_official",
+				"description": "Test// Zyýat_hill_official\r\nÝerleşýän ýeri:Aşgabat şäheri gurtly jay 3  1 gat \r\nDastawka hyzmaty bar.\r\nHabarlaşmak üçin:\r\n+993 62 02 13 63",
+				"location": "Ashgabat",
+				"chekedStatus": true,
+				"cancel": false,
+				"pinned": true,
+				"view_count": 101,
+				"share_count": 10,
+				"like_count": 51,
+				"share_token": "72489790-8ccd-47ba-be72-6d524cb37865",
+				"download_count": 15,
+				"posted_at": "2024-03-29T13:42:41.179328+05:00",
+				"created_at": "2024-03-29T13:42:41.068604+05:00",
+				"updated_at": "2024-03-31T16:57:42.551557+05:00",
+				"is_active": true,
+				"trend": false,
+				"is_vertical": true,
+				"user": 24,
+				"category": 12,
+				"brands": null
+			},
+			{
+				"id": 39468,
+				"videofile": "https://dev.tmbiz.info///video/1709725761518701343/1709725761518701343.mp4",
+				"image_path": "https://dev.tmbiz.info//data/videos/images/e2902385-5203-4cc4-ad40-cc4592b363a7.jpg",
+				"tags": [
+					{
+						"id": 11,
+						"name": "#tmbiz"
+					},
+					{
+						"id": 13,
+						"name": "# Yunus konditer"
+					}
+				],
+				"subcategory": "Gaplanan önümler",
+				"username": "Tort we Konditer önümleri",
+				"saylananlar": "",
+				"user_avatar": "https://dev.tmbiz.info//data/profile/images/6182147a-6293-42e0-be00-2ef17cd030ea.jpg",
+				"download_link": "https://dev.tmbiz.info/api/videos/39468/download",
+				"title": "Yunus konditer",
+				"description": "Test// Yunus konditer\r\nÝerleşýän ýeri:Aşgabat şäheri Gulzemin sowda merkezi \r\nDastawka hyzmaty bar.\r\nHabarlaşmak üçin:\r\n863220066",
+				"location": "Ashagabt",
+				"chekedStatus": true,
+				"cancel": false,
+				"pinned": true,
+				"view_count": 100,
+				"share_count": 10,
+				"like_count": 50,
+				"share_token": "72489790-8ccd-47ba-be72-6d524cb37865",
+				"download_count": 10,
+				"posted_at": "2024-03-29T13:42:41.179328+05:00",
+				"created_at": "2024-03-29T13:42:41.068604+05:00",
+				"updated_at": "2024-03-31T13:39:59.213374+05:00",
+				"is_active": true,
+				"trend": false,
+				"is_vertical": true,
+				"user": 24,
+				"category": 12,
+				"brands": null
+			},
+			{
+				"id": 39454,
+				"videofile": "https://dev.tmbiz.info///video/1709725567776871653/1709725567776871653.mp4",
+				"image_path": "https://dev.tmbiz.info//data/videos/images/ad2fe276-38e8-49d1-9cda-b4a240f7ff1e.jpg",
+				"tags": [
+					{
+						"id": 11,
+						"name": "#tmbiz"
+					},
+					{
+						"id": 13,
+						"name": "# Yunus konditer"
+					}
+				],
+				"subcategory": "Gaplanan önümler",
+				"username": "Tort we Konditer önümleri",
+				"saylananlar": "",
+				"user_avatar": "https://dev.tmbiz.info//data/profile/images/6182147a-6293-42e0-be00-2ef17cd030ea.jpg",
+				"download_link": "https://dev.tmbiz.info/api/videos/39454/download",
+				"title": "Yunus konditer",
+				"description": "Test// Yunus konditer\r\nÝerleşýän ýeri:Aşgabat şäheri Gulzemin sowda merkezi \r\nDastawka hyzmaty bar.\r\nHabarlaşmak üçin:\r\n863220066",
+				"location": "Ashgabat",
+				"chekedStatus": true,
+				"cancel": false,
+				"pinned": true,
+				"view_count": 100,
+				"share_count": 10,
+				"like_count": 50,
+				"share_token": "72489790-8ccd-47ba-be72-6d524cb37865",
+				"download_count": 50,
+				"posted_at": "2024-03-29T13:42:41.179328+05:00",
+				"created_at": "2024-03-29T13:42:41.068604+05:00",
+				"updated_at": "2024-03-31T18:29:29.236913+05:00",
+				"is_active": true,
+				"trend": false,
+				"is_vertical": true,
+				"user": 24,
+				"category": 12,
+				"brands": null
+			},
+			{
+				"id": 39458,
+				"videofile": "https://dev.tmbiz.info///video/1709725610916694161/1709725610916694161.mp4",
+				"image_path": "https://dev.tmbiz.info//data/videos/images/90aac79a-1739-4ee9-bc0b-f1e15882415c.jpg",
+				"tags": [
+					{
+						"id": 10,
+						"name": "#Zyýat_hill_official"
+					},
+					{
+						"id": 11,
+						"name": "#tmbiz"
+					}
+				],
+				"subcategory": "Gaplanan önümler",
+				"username": "Daşary ýurt tagamlary",
+				"saylananlar": "",
+				"user_avatar": "https://dev.tmbiz.info//data/profile/images/26a2237b-1b2c-4827-ac72-19bdc22a6422.jpg",
+				"download_link": "https://dev.tmbiz.info/api/videos/39458/download",
+				"title": "Zyýat_hill_official",
+				"description": "Test// Zyýat_hill_official\r\nÝerleşýän ýeri:Aşgabat şäheri gurtly jay 3  1 gat \r\nDastawka hyzmaty bar.\r\nHabarlaşmak üçin:\r\n+993 62 02 13 63",
+				"location": "Ashgabat",
+				"chekedStatus": true,
+				"cancel": false,
+				"pinned": true,
+				"view_count": 100,
+				"share_count": 100,
+				"like_count": 50,
+				"share_token": "72489790-8ccd-47ba-be72-6d524cb37865",
+				"download_count": 10,
+				"posted_at": "2024-03-29T13:42:41.179328+05:00",
+				"created_at": "2024-03-29T13:42:41.068604+05:00",
+				"updated_at": "2024-03-31T15:10:56.069662+05:00",
+				"is_active": true,
+				"trend": false,
+				"is_vertical": true,
+				"user": 11,
+				"category": 12,
+				"brands": null
+			},
+			{
+				"id": 39462,
+				"videofile": "https://dev.tmbiz.info///video/1709725665579652942/1709725665579652942.mp4",
+				"image_path": "https://dev.tmbiz.info//data/videos/images/d15c757a-6e17-4338-8689-d89273776e6c.jpg",
+				"tags": [
+					{
+						"id": 11,
+						"name": "#tmbiz"
+					},
+					{
+						"id": 13,
+						"name": "# Yunus konditer"
+					}
+				],
+				"subcategory": "Gaplanan önümler",
+				"username": "Tort we Konditer önümleri",
+				"saylananlar": "",
+				"user_avatar": "https://dev.tmbiz.info//data/profile/images/6182147a-6293-42e0-be00-2ef17cd030ea.jpg",
+				"download_link": "https://dev.tmbiz.info/api/videos/39462/download",
+				"title": "Yunus konditer",
+				"description": "Test// Yunus konditer\r\nÝerleşýän ýeri:Aşgabat şäheri Gulzemin sowda merkezi \r\nDastawka hyzmaty bar.\r\nHabarlaşmak üçin:\r\n863220066",
+				"location": "Ashgabat",
+				"chekedStatus": true,
+				"cancel": false,
+				"pinned": true,
+				"view_count": 100,
+				"share_count": 100,
+				"like_count": 101,
+				"share_token": "72489790-8ccd-47ba-be72-6d524cb37865",
+				"download_count": 100,
+				"posted_at": "2024-03-29T13:42:41.179328+05:00",
+				"created_at": "2024-03-29T13:42:41.068604+05:00",
+				"updated_at": "2024-03-31T16:16:48.986385+05:00",
+				"is_active": true,
+				"trend": false,
+				"is_vertical": true,
+				"user": 24,
+				"category": 12,
+				"brands": null
+			},
+			{
+				"id": 39327,
+				"videofile": "https://dev.tmbiz.info///video/1709722843360191867/1709722843360191867.mp4",
+				"image_path": "https://dev.tmbiz.info//data/videos/images/392dfda5-207d-43cc-b9d8-b20da639e342.jpg",
+				"tags": [
+					{
+						"id": 11,
+						"name": "#tmbiz"
+					},
+					{
+						"id": 13,
+						"name": "# Yunus konditer"
+					}
+				],
+				"subcategory": "Azyk haryt goraýjy",
+				"username": "Tort we Konditer önümleri",
+				"saylananlar": "",
+				"user_avatar": "https://dev.tmbiz.info//data/profile/images/6182147a-6293-42e0-be00-2ef17cd030ea.jpg",
+				"download_link": "https://dev.tmbiz.info/api/videos/39327/download",
+				"title": "Yunus konditer",
+				"description": "Test// Yunus konditer\r\nÝerleşýän ýeri:Aşgabat şäheri Gulzemin sowda merkezi \r\nDastawka hyzmaty bar.\r\nHabarlaşmak üçin:\r\n863220066",
+				"location": "Ashgabat",
+				"chekedStatus": true,
+				"cancel": false,
+				"pinned": true,
+				"view_count": 250,
+				"share_count": 150,
+				"like_count": 250,
+				"share_token": "72489790-8ccd-47ba-be72-6d524cb37865",
+				"download_count": 250,
+				"posted_at": "2024-03-29T13:42:41.179328+05:00",
+				"created_at": "2024-03-29T13:42:41.068604+05:00",
+				"updated_at": "2024-03-31T16:53:20.244663+05:00",
+				"is_active": true,
+				"trend": false,
+				"is_vertical": true,
+				"user": 24,
+				"category": 12,
+				"brands": null
+			},
+			{
+				"id": 39432,
+				"videofile": "https://dev.tmbiz.info///video/1709725066890184570/1709725066890184570.mp4",
+				"image_path": "https://dev.tmbiz.info//data/videos/images/d4f4baf3-c8c4-400e-b712-24e0fb2754c9.jpg",
+				"tags": [
+					{
+						"id": 11,
+						"name": "#tmbiz"
+					},
+					{
+						"id": 13,
+						"name": "# Yunus konditer"
+					}
+				],
+				"subcategory": "Azyk haryt goraýjy",
+				"username": "Merjen Öwezowa",
+				"saylananlar": "",
+				"user_avatar": "https://dev.tmbiz.info//data/profile/images/16d369f7-2a49-4b1a-9d42-b1c81f4f30ae.jpg",
+				"download_link": "https://dev.tmbiz.info/api/videos/39432/download",
+				"title": "Yunus konditer",
+				"description": "Test// Yunus konditer\r\nÝerleşýän ýeri:Aşgabat şäheri Gulzemin sowda merkezi \r\nDastawka hyzmaty bar.\r\nHabarlaşmak üçin:\r\n863220066",
+				"location": "Ashgabat",
+				"chekedStatus": true,
+				"cancel": false,
+				"pinned": true,
+				"view_count": 100,
+				"share_count": 10,
+				"like_count": 12,
+				"share_token": "72489790-8ccd-47ba-be72-6d524cb37865",
+				"download_count": 10,
+				"posted_at": "2024-03-29T13:42:41.179328+05:00",
+				"created_at": "2024-03-29T13:42:41.068604+05:00",
+				"updated_at": "2024-03-31T16:16:42.062494+05:00",
+				"is_active": true,
+				"trend": false,
+				"is_vertical": true,
+				"user": 2,
+				"category": 12,
+				"brands": null
+			},
+			{
+				"id": 39434,
+				"videofile": "https://dev.tmbiz.info///video/1709725096928165664/1709725096928165664.mp4",
+				"image_path": "https://dev.tmbiz.info//data/videos/images/22627818-9e28-4f19-bcf5-b12dbf1dfdaf.jpg",
+				"tags": [
+					{
+						"id": 10,
+						"name": "#Zyýat_hill_official"
+					},
+					{
+						"id": 11,
+						"name": "#tmbiz"
+					}
+				],
+				"subcategory": "Azyk haryt goraýjy",
+				"username": "Tort we Konditer önümleri",
+				"saylananlar": "",
+				"user_avatar": "https://dev.tmbiz.info//data/profile/images/6182147a-6293-42e0-be00-2ef17cd030ea.jpg",
+				"download_link": "https://dev.tmbiz.info/api/videos/39434/download",
+				"title": "Zyýat_hill_official",
+				"description": "Test// Zyýat_hill_official\r\nÝerleşýän ýeri:Aşgabat şäheri gurtly jay 3  1 gat \r\nDastawka hyzmaty bar.\r\nHabarlaşmak üçin:\r\n+993 62 02 13 63",
+				"location": "Ashgabat",
+				"chekedStatus": true,
+				"cancel": false,
+				"pinned": true,
+				"view_count": 100,
+				"share_count": 15,
+				"like_count": 102,
+				"share_token": "72489790-8ccd-47ba-be72-6d524cb37865",
+				"download_count": 10,
+				"posted_at": "2024-03-29T13:42:41.179328+05:00",
+				"created_at": "2024-03-29T13:42:41.068604+05:00",
+				"updated_at": "2024-04-04T22:51:59.562067+05:00",
+				"is_active": true,
+				"trend": false,
+				"is_vertical": true,
+				"user": 24,
+				"category": 12,
+				"brands": null
+			}
+		]
+	}
+}

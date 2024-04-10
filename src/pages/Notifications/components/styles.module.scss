@@ -1,0 +1,57 @@
+.container {
+  display: flex;
+  min-height: 70vh;
+  justify-content: space-around;
+  width: 100%;
+  &:focus {
+    outline: none;
+  }
+  .arrBtn {
+    margin-top: 25vh;
+  }
+  .wrapper {
+    width: 900px;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: auto;
+    scroll-snap-type: x mandatory;
+    padding: 2rem;
+    gap: 50px;
+    background: transparent;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .outCard {
+      min-width: 900px;
+      padding: 1rem;
+      scroll-snap-align: start;
+      .card {
+        border-radius: 0.5rem;
+        box-shadow: 1px 1px 10px rgb(207, 207, 207);
+        width: 100%;
+        height: 100%;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        .profile {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+          }
+        }
+        .bannerImg {
+          width: 100%;
+          object-fit: cover;
+          height: 50vh;
+          border-radius: 1rem;
+        }
+      }
+    }
+  }
+}

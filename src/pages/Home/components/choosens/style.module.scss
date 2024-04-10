@@ -1,47 +1,61 @@
-.container{
-    width: 100%;
-    height: 50vh;
-
-    nav{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 20px;
-        button{
-            background: white;
-            font-weight: 600;
-            border: 1px solid gray;
-            padding: 0.3rem;
-            border-radius: 0.4rem;
-        }
+.container {
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // margin-bottom: 0.5rem;
+    button {
+      background: white;
+      font-weight: 600;
+      border: 1px solid gray;
+      padding: 0.3rem;
+      border-radius: 0.4rem;
     }
-    .cards{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+  }
+  .cards {
+    height: 92%;
+    display: flex;
+    align-items: center;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    column-gap: 40px;
+    &::-webkit-scrollbar {
+      display: none;
     }
+  }
 }
 
-.card{
-    width: 16vw;
-    height: 40vh;
-    border: 1px solid black;
+.card {
+  width: 300px;
+  height: 95%;
+  display: flex;
+  flex: auto;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  border: 1px solid black;
+  border-radius: 0.6rem;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  span {
+    position: absolute;
+    background: white;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    padding: 0.2rem;
+    border-radius: 0.4rem;
+    color: black;
+    z-index: 2;
+  }
+  img {
+    width: 100%;
+    height: 100%;
     border-radius: 0.6rem;
-    position: relative;
-    span{
-        position: absolute;
-        background: white;
-        top: 10px;
-        left: 10px;
-        display: flex;
-        padding: 0.2rem;
-        border-radius: 0.4rem;
-        color: black;
-    }
-    img{
-        width: 100%;
-        height: 100%;
-    border-radius: 0.6rem;
-        object-fit: cover;
-    }
+    object-fit: cover;
+    z-index: 1;
+  }
 }

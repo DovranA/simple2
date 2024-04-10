@@ -1,11 +1,25 @@
+import { useState } from "react";
+import VideoCards from "../../../../components/VideoCards/VideoCards";
+import TopCards from "../../../../components/VideoCards/topCard";
 import styles from "./style.module.scss";
-const Pinned = () => {
+import { PinnedVideos } from "../../../../types/home";
+type Props = {
+  data: PinnedVideos;
+};
+const Pinned = ({ data }: Props) => {
+  const [density, setDensity] = useState<number>(4);
+
   return (
     <div className={styles.pinned}>
-      <nav>
-        <h2>Berkidilenler</h2>
-      </nav>
-      <div></div>
+      <VideoCards density={density} data={data.detail}>
+        <TopCards
+          title="Berkidilenler"
+          density={density}
+          setDensity={setDensity}
+          button="Hemmesi"
+          buttonClick={() => {}}
+        />
+      </VideoCards>
     </div>
   );
 };
