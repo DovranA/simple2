@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import styles from './styles.module.scss'
 import { IoClose } from 'react-icons/io5'
 import {
@@ -154,7 +154,10 @@ const Player = () => {
           </div>
           <div className={styles.someContrs}>
             <div className={styles.volume}>
-              <span className={styles.icon}>
+              <span
+                className={styles.icon}
+                onClick={() => setMuted((prev) => !prev)}
+              >
                 <MdVolumeUp size={40} />
               </span>
             </div>

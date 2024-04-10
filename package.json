@@ -17,6 +17,7 @@
     "bootstrap-icons": "^1.11.3",
     "flatlist-react": "^1.5.14",
     "framer-motion": "^11.0.25",
+    "global": "^4.4.0",
     "moment": "^2.30.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -29,6 +30,7 @@
     "react-snap-carousel": "^0.4.0",
     "react-spring": "^9.7.3",
     "sass": "^1.72.0",
+    "serve": "^14.2.1",
     "use-local-storage": "^3.0.0"
   },
   "devDependencies": {
