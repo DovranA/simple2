@@ -49,7 +49,14 @@ const Trends = () => {
         className={styles.infiniteScroll}
       >
         {data.map((video: video, idx: number) => {
-          return <Card info={video} key={idx} style={{ height: `$ 30vh` }} />
+          return (
+            <Card
+              // data={data}
+              info={video}
+              key={idx}
+              style={{ height: `$ 30vh` }}
+            />
+          )
         })}
       </InfiniteScroll>
     </div>

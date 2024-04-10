@@ -47,6 +47,7 @@ const Video = ({ videocontent, options, setPlay }: Props) => {
       }
     }
   }, [options])
+  
   return (
     <div className={styles.video}>
       <video

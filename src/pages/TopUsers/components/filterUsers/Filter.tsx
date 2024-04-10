@@ -2,7 +2,6 @@ import styles from "./styles.module.scss";
 import RankButton from "../../../../components/Rank/RankButton";
 import { IoIosHeart, IoIosHeartEmpty } from "react-icons/io";
 import { IoEyeOutline } from "react-icons/io5";
-import { FaBitcoin } from "react-icons/fa";
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
 import {
   SlctUserActiveBtn,

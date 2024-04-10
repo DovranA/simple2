@@ -16,38 +16,27 @@ import { img1 } from '../../assets'
 import { GoScreenFull } from 'react-icons/go'
 import Video from './Video/Video'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
-import { setPlayerModal } from '../../features/videoSlice'
-import { SelectHomeData } from '../../features/homeSlice'
+import {
+  SlctPlayerOpenLock,
+  VideoData,
+  setLikeVideo,
+  setPlayerModal,
+  setPlayerVideos,
+} from '../../features/videoSlice'
+import axios from 'axios'
+import { setPinnedLike } from '../../features/homeSlice'
 const Player = () => {
   const [current, setCurrent] = useState(0)
   const [rand, setRand] = useState(0)
   const [fullScreen, setFullScreen] = useState(false)
   const [playing, setPalying] = useState(false)
   const [muted, setMuted] = useState(false)
-  const [volume, setVolume] = useState(0.5)
+  const [volume] = useState(0.5)
   const playerRef = useRef<HTMLDivElement>(null)
   const videospace = useRef<HTMLDivElement>(null)
+  const videosArr = useAppSelector(VideoData)
   const dispatch = useAppDispatch()
-  const videoData = useAppSelector(SelectHomeData)
-  const [videarr, setVideoArr] = useState(videoData.pinnedVideos.detail)
-  const myVideoData = [
-    {
-      id: 300,
-      videofile: '/videos/vid1.mp4',
-    },
-    {
-      id: 2,
-      videofile: '/videos/vid2.mp4',
-    },
-    {
-      id: 3,
-      videofile: '/videos/vid3.mp4',
-    },
-    {
-      id: 4,
-      videofile: '/videos/vid4.mp4',
-    },
-  ]
+  const openPlayerLock = useAppSelector(SlctPlayerOpenLock)
   const handleScroll = () => {
     if (playerRef.current) {
       const viewHeight = playerRef.current.clientHeight
@@ -69,7 +58,7 @@ const Player = () => {
         break
       case 'ArrowDown':
         e.preventDefault()
-        setCurrent((prev) => (prev < myVideoData.length - 1 ? ++prev : prev))
+        setCurrent((prev) => (prev < videosArr.length - 1 ? ++prev : prev))
         setRand(Math.random())
         break
     }
@@ -92,6 +81,21 @@ const Player = () => {
       inline: 'start',
     })
   }, [rand])
+  const apiUrl = import.meta.env.VITE_API_PATH
+
+  const handleLike = async (id: number) => {
+    try {
+      const res = await axios.put(apiUrl + `/api/videos/${id}/like`, {
+        withCredentials: true,
+      })
+      if (openPlayerLock === 'pinned') {
+        dispatch(setPinnedLike({ id: id, like: res.data.likeNum }))
+      }
+      dispatch(setLikeVideo({ id: id, like: res.data.likeNum }))
+    } catch (error) {
+      console.log(error)
+    }
+  }
   return (
     <div
       className={styles.containerPlayer}
@@ -105,15 +109,14 @@ const Player = () => {
           <CiSearch />
         </span>
         <div className={styles.app__videos} ref={playerRef}>
-          {videarr.map((item, idx: number) => {
-            // {myVideoData.map((item, idx: number) => {
+          {videosArr.map((item: any, idx: number) => {
             return (
               <Video
                 setPlay={() => setPalying(!playing)}
                 key={idx}
                 videocontent={item}
                 options={{
-                  currentId: videarr[current].id,
+                  currentId: videosArr[current].id,
                   muted,
                   playing,
                   volume,
@@ -124,7 +127,10 @@ const Player = () => {
         </div>
         <div className={`${styles.contrs} ${styles.left}`}>
           <span
-            onClick={() => dispatch(setPlayerModal())}
+            onClick={() => {
+              dispatch(setPlayerModal())
+              dispatch(setPlayerVideos([]))
+            }}
             className={`${styles.icon} ${styles.colse}`}
           >
             <IoClose size={40} />
@@ -144,7 +150,7 @@ const Player = () => {
               onClick={() => {
                 console.log('first')
                 setCurrent((prev) =>
-                  prev < myVideoData.length - 1 ? ++prev : prev
+                  prev < videosArr.length - 1 ? ++prev : prev
                 )
                 setRand(Math.random())
               }}
@@ -156,7 +162,9 @@ const Player = () => {
             <div className={styles.volume}>
               <span
                 className={styles.icon}
-                onClick={() => setMuted((prev) => !prev)}
+                onClick={() => {
+                  setMuted((prev) => !prev)
+                }}
               >
                 <MdVolumeUp size={40} />
               </span>
@@ -175,9 +183,12 @@ const Player = () => {
           </span>
           <div className={styles.actions}>
             <span className={styles.icon}>
-              <LikeBtn size={30} />
+              <LikeBtn
+                onClick={() => handleLike(videosArr[current].id)}
+                size={30}
+              />
             </span>
-            <p>100k</p>
+            <p>{videosArr[current].like_count}</p>
             <span
               className={styles.icon}
               onClick={() => {
@@ -195,11 +206,11 @@ const Player = () => {
             >
               <PiShareFat size={30} />
             </span>
-            <p>100k</p>
+            <p>{videosArr[current].share_count}</p>
             <span className={styles.icon}>
               <LiaDownloadSolid size={30} />
             </span>
-            <p>100k</p>
+            <p>{videosArr[current].download_count}</p>
           </div>
           <div className={styles.someContrs}>
             <span

@@ -8,13 +8,32 @@ import { motion } from 'framer-motion'
 import { video } from '../../types/global'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { useAppDispatch } from '../../app/hooks'
-import { setPlayerModal } from '../../features/videoSlice'
+import {
+  openPlayerLock,
+  setPlayerModal,
+  setPlayerVideos,
+} from '../../features/videoSlice'
+import axios from 'axios'
+const apiUrl = import.meta.env.VITE_API_PATH
+
 type Props = {
-  style?: any
+  style: any
   info: video
+  data?: video[]
+  likeFunc?: any
 }
-const Card = ({ style, info }: Props) => {
+const Card = ({ style, info, likeFunc }: Props) => {
   const dispatch = useAppDispatch()
+  const handleLike = async (id: number) => {
+    try {
+      const res = await axios.put(apiUrl + `/api/videos/${id}/like`, {
+        withCredentials: true,
+      })
+      dispatch(likeFunc({ id: id, like: res.data.likeNum }))
+    } catch (error) {
+      console.log(error)
+    }
+  }
   return (
     <div
       onClick={() => dispatch(setPlayerModal())}
@@ -25,7 +44,7 @@ const Card = ({ style, info }: Props) => {
         <BsPlayFill className={styles.icon} />
         <span className={styles.blur}></span>
       </div>
-      <LazyLoadImage src={info.image_path} effect='blur' />
+      <img src={info?.image_path} alt='' />
       <motion.div
         initial={{ y: 38 }}
         whileHover={{ y: 0 }}
@@ -42,7 +61,7 @@ const Card = ({ style, info }: Props) => {
               {info.view_count}
             </span>
             <span>
-              <LikeBtn /> {info.like_count}
+              <LikeBtn onClick={() => handleLike(info.id)} /> {info.like_count}
             </span>
             <span>
               <FiDownload size={23} /> {info.download_count}

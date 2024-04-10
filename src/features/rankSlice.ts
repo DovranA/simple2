@@ -25,9 +25,12 @@ const initialState:InitialRank = {
     errorVideo: null
 }
 
+const apiUrl = import.meta.env.VITE_API_PATH
+
+
 export const handleUserFetch = createAsyncThunk("users/topusers", async (type:string) => {
     try {
-        const res = await axios.get("https://dev.tmbiz.info/api/users/topusers?type="+ type)
+        const res = await axios.get(apiUrl+"/api/users/topusers?type="+ type)
         return res.data
     } catch (error) {
         console.log(error);
@@ -36,7 +39,7 @@ export const handleUserFetch = createAsyncThunk("users/topusers", async (type:st
 })
 export const handleVideosFetch = createAsyncThunk("videos/topvideos", async (type:string) => {
     try {
-        const res = await axios.get("https://dev.tmbiz.info/api/videos/topvideos?type="+ type)
+        const res = await axios.get(apiUrl+"/api/videos/topvideos?type="+ type)
         return res.data
     } catch (error) {
         console.log(error);

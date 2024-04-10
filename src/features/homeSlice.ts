@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../app/store";
 import axios from "axios";
 import { InitialHome } from "../types/home";
+import { TopVideo } from "../types/topUsers";
 
 
 
@@ -44,9 +45,11 @@ const initialState:InitialHome = {
     },
 }
 
+const apiUrl = import.meta.env.VITE_API_PATH
+
 export const mainPageFetch = createAsyncThunk("homepage", async () => {
     try {
-        const res = await axios.get("https://dev.tmbiz.info/api/videos/mainpage")
+        const res = await axios.get(apiUrl+ "/api/videos/mainpage")
         return res.data
     } catch (error) {
         console.log(error);
@@ -60,6 +63,10 @@ const homeSlice = createSlice({
     reducers:{
         switchPlayerModal: (state) => {
             state.playerModal = !state.playerModal
+        },
+        setPinnedLike:(state, action) => {
+            let item = state.data.pinnedVideos.detail.find((i:TopVideo) => i.id === action.payload.id)
+            item.like_count = action.payload.like
         }
     },
     extraReducers:(builder) => {
@@ -80,11 +87,11 @@ const homeSlice = createSlice({
 })
 
 export const {
-    switchPlayerModal
+    switchPlayerModal,
+    setPinnedLike
 } = homeSlice.actions
 
 export default homeSlice.reducer
-
 
 export const SelectHomeData = (state:RootState) => state.home.data
 
