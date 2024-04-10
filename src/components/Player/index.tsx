@@ -26,7 +26,6 @@ const Player = () => {
   const [playing, setPalying] = useState(false)
   const [muted] = useState(false)
   const [volume] = useState(0.5)
-  const [like, setLike] = useState(false)
   const playerRef = useRef<HTMLDivElement>(null)
   const videospace = useRef<HTMLDivElement>(null)
   const videosArr = useAppSelector(VideoData)

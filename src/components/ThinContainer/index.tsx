@@ -18,7 +18,8 @@ const ThinContainer = ({ title, btnTitle, img, link }: Props) => {
       </nav>
       <div className={styles.imgContainer}>
         <Link to={link}>
-          <img src={img} alt="" />
+
+          <img src={img} alt="" loading="lazy" />
         </Link>
       </div>
     </div>
