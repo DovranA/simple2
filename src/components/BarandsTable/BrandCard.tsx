@@ -1,9 +1,9 @@
-import { BsFileEarmarkPlay } from "react-icons/bs";
-import styles from "./styles.module.scss";
+import { BsFileEarmarkPlay } from 'react-icons/bs'
+import styles from './styles.module.scss'
 const BrandCard = () => {
   return (
     <div className={styles.brandCard}>
-      <img src="/card1.png" alt="" />
+      <img src='/card1.png' alt='' />
       <div className={styles.aboluteDiv}>
         <span>
           <BsFileEarmarkPlay size={18} />
@@ -14,7 +14,7 @@ const BrandCard = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default BrandCard;
+export default BrandCard
