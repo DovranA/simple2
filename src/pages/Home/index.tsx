@@ -4,15 +4,19 @@ import Slider from "./components/slider/Slider";
 import styles from "./home.module.scss";
 import ThinContainer from "../../components/ThinContainer";
 import { useEffect } from "react";
-import { SelectHomeData, mainPageFetch, setPinnedLike } from "../../features/homeSlice";
+import { SelectHomeData, SelectHomeLoading, mainPageFetch, setPinnedLike } from "../../features/homeSlice";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 const Home = () => {
   const dispatch = useAppDispatch();
   const data = useAppSelector(SelectHomeData);
+  const loading = useAppSelector(SelectHomeLoading)
   useEffect(() => {
     dispatch(mainPageFetch());
   }, []);
 
+  if(loading){
+    return <h1>Loading</h1>
+  }
   return (
     <div className={styles.home}>
       <Slider image={data.banner.images} />
