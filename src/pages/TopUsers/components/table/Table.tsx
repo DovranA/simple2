@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import Row from "../../../../components/RankTable/Row";
 import { UserProfile } from "../../../../types/topUsers";
 import styles from "./styles.module.scss";

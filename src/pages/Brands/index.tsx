@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
-import BrandsCards from '../../components/BarandsTable/BrandCards'
+// import BrandsCards from '../../components/BarandsTable/BrandCards'
 import TopLink from '../../components/TopLink/TopLink'
 import { SelectTrendsData, trendsPageFetch } from '../../features/trendsSlice'
 import Slider from '../Home/components/slider/Slider'
 import FilterNav from '../../components/FilterNav/FilterNav'
-import { video } from '../../types/global'
+// import { video } from '../../types/global'
 
 const Trends = () => {
   const dispatch = useAppDispatch()
@@ -34,11 +34,11 @@ const Trends = () => {
       <TopLink location='Brendlar' />
       <FilterNav count={trends.totalTrends} sort={by} sortby={setBy} />
       <Slider image={trends.banner.images} />
-      <BrandsCards>
+      {/* <BrandsCards>
         {trends.videos.map((video: video) => {
           return <></>
         })}
-      </BrandsCards>
+      </BrandsCards> */}
     </div>
   )
 }

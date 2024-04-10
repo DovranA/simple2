@@ -25,13 +25,13 @@ const Navbar = () => {
   }
 
   const isPlayer = useAppSelector(SelectPlayerModal)
-
+  console.log(isPlayer)
   return (
     <nav className={styles.navbar}>
       {modal && <Modal setModal={setModal} type={modalType} onOff={modal} />}
       {isPlayer ? <Player /> : null}
 
-      <span>
+      <span onClick={() => navigate('/')}>
         <img src={logo} alt='logo' />
       </span>
       <div className={styles.searchDiv}>

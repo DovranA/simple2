@@ -5,34 +5,55 @@ import { FiDownload } from 'react-icons/fi'
 import LikeBtn from '../Like/LikeBtn'
 import moment from 'moment'
 import { motion } from 'framer-motion'
-import { useAppDispatch } from '../../app/hooks'
-import { setPlayerModal } from '../../features/videoSlice'
 import { video } from '../../types/global'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import { useAppDispatch } from '../../app/hooks'
+import {
+  openPlayerLock,
+  setPlayerModal,
+  setPlayerVideos,
+} from '../../features/videoSlice'
+import axios from 'axios'
+// const apiUrl = import.meta.env.VITE_API_PATH
 
 type Props = {
-  style?: any
+  style: any
   info: video
+  data?: video[]
+  likeFunc?: any
 }
-const Card = ({ style, info }: Props) => {
+const Card = ({ style, info, data, likeFunc }: Props) => {
   const dispatch = useAppDispatch()
-
+  const handleLike = async (id: number) => {
+    try {
+      const res = await axios.put(`/api/videos/${id}/like`, {
+        withCredentials: true,
+      })
+      dispatch(likeFunc({ id: id, like: res.data.likeNum }))
+    } catch (error) {
+      console.log(error)
+    }
+  }
   return (
-    <div
-      onClick={() => dispatch(setPlayerModal())}
-      className={`${styles.cardContain}`}
-      style={style}
-    >
+    <div className={`${styles.cardContain}`} style={style}>
       <div className={styles.btn}>
         <BsPlayFill className={styles.icon} />
         <span className={styles.blur}></span>
       </div>
-      <img src={info.image_path} alt='' />
+      <LazyLoadImage
+        src={info?.image_path}
+        effect='blur'
+        onClick={() => {
+          dispatch(setPlayerModal())
+          dispatch(setPlayerVideos({ data, id: info.id }))
+          dispatch(openPlayerLock('pinned'))
+        }}
+      />
       <motion.div
         initial={{ y: 38 }}
         whileHover={{ y: 0 }}
         className={styles.info}
       >
-        {/* <div className={styles.bg}></div> */}
         <p>{info.title}</p>
         <div className={style.about}>
           <span className={styles.date}>
@@ -44,7 +65,7 @@ const Card = ({ style, info }: Props) => {
               {info.view_count}
             </span>
             <span>
-              <LikeBtn /> {info.like_count}
+              <LikeBtn onClick={() => handleLike(info.id)} /> {info.like_count}
             </span>
             <span>
               <FiDownload size={23} /> {info.download_count}

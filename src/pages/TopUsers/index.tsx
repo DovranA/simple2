@@ -2,7 +2,6 @@ import { IoIosHeart } from "react-icons/io";
 import TopLink from "../../components/TopLink/TopLink";
 import FilterBtns from "./components/filterUsers/Filter";
 import { IoEyeOutline } from "react-icons/io5";
-import { FaBitcoin } from "react-icons/fa";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import {
   SlctUsersRankData,

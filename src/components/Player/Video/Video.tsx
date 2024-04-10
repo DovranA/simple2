@@ -4,7 +4,14 @@ type Props = {
   videocontent: any
   setPlay: (prev: any) => void
   options?:
-    | { playing: boolean; volume: number; muted: boolean; currentId: number }
+    | {
+        playing: boolean
+        volume: number
+        muted: boolean
+        currentId: number
+        spin: number
+        setSpin: (value: number) => void
+      }
     | undefined
 }
 const Video = ({ videocontent, options, setPlay }: Props) => {
@@ -38,7 +45,20 @@ const Video = ({ videocontent, options, setPlay }: Props) => {
   useEffect(() => {
     if (videoRef.current && options) {
       videoRef.current.volume = Math.min(Math.max(options.volume, 0), 1)
+      if (options.currentId === videocontent.id) {
+        if (options.spin === -1) {
+          videoRef.current.currentTime -= 3
+          options.setSpin(0)
+        }
+        if (options.spin === 1) {
+          videoRef.current.currentTime += 3
+          options.setSpin(0)
+        }
+      }
       if (options.currentId === videocontent.id && options?.playing) {
+        if (options.spin === -1) {
+          console.log(options.spin)
+        }
         videoRef.current?.play()
         interval
       } else {
@@ -47,6 +67,7 @@ const Video = ({ videocontent, options, setPlay }: Props) => {
       }
     }
   }, [options])
+
   return (
     <div className={styles.video}>
       <video

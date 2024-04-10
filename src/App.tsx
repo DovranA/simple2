@@ -11,7 +11,7 @@ import Brands from './pages/Brands'
 import SearchResult from './pages/SearchResult'
 import Notifications from './pages/Notifications'
 import Trends from './pages/Trands'
-
+import 'react-lazy-load-image-component/src/effects/blur.css'
 function App() {
   return (
     <BrowserRouter>

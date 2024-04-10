@@ -9,8 +9,7 @@ import {
 } from 'react'
 import styles from './style.module.scss'
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
-import { useAppSelector } from '../../../../app/hooks'
-import { SelectHomeData } from '../../../../features/homeSlice'
+
 const Slider = ({ image }: { image: { src: string }[] }) => {
   return (
     <section className={styles.slider}>
