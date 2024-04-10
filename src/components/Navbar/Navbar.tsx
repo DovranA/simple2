@@ -25,7 +25,7 @@ const Navbar = () => {
   }
 
   const isPlayer = useAppSelector(SelectPlayerModal)
-
+  console.log(isPlayer)
   return (
     <nav className={styles.navbar}>
       {modal && <Modal setModal={setModal} type={modalType} onOff={modal} />}

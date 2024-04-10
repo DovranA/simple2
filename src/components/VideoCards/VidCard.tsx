@@ -22,7 +22,7 @@ type Props = {
   data?: video[]
   likeFunc?: any
 }
-const Card = ({ style, info, likeFunc }: Props) => {
+const Card = ({ style, info, data, likeFunc }: Props) => {
   const dispatch = useAppDispatch()
   const handleLike = async (id: number) => {
     try {
@@ -44,7 +44,15 @@ const Card = ({ style, info, likeFunc }: Props) => {
         <BsPlayFill className={styles.icon} />
         <span className={styles.blur}></span>
       </div>
-      <img src={info?.image_path} alt='' />
+      <LazyLoadImage
+        src={info?.image_path}
+        effect='blur'
+        onClick={() => {
+          dispatch(setPlayerModal())
+          dispatch(setPlayerVideos(data))
+          dispatch(openPlayerLock('pinned'))
+        }}
+      />
       <motion.div
         initial={{ y: 38 }}
         whileHover={{ y: 0 }}

@@ -60,8 +60,6 @@ const Home = () => {
       />
 
       <Pinned likeFunc={setPinnedLike} data={data.pinnedVideos} />
-
-      {/* {true ? <Player /> : null} */}
     </div>
   )
 }

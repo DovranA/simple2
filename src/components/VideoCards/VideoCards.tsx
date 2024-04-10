@@ -1,5 +1,4 @@
-import { PinnedVideos } from '../../types/home'
-import { TopVideo } from '../../types/topUsers'
+import { video } from '../../types/global'
 import Card from './VidCard'
 import styles from './styles.module.scss'
 

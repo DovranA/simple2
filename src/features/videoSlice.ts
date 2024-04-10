@@ -13,6 +13,7 @@ const playerSlice = createSlice({
   initialState,
   reducers: {
     setPlayerModal: (state) => {
+      console.log(state.playerModal)
       state.playerModal = !state.playerModal
     },
     openPlayerLock: (state, action) => {
