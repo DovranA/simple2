@@ -6,9 +6,10 @@ type Props = {
   children: any;
   density: number;
   data: TopVideo[];
+  likeFunc: any
 };
 
-const VideoCards = ({ children, density, data }: Props) => {
+const VideoCards = ({ children, density, data, likeFunc }: Props) => {
   return (
     <div className={styles.content}>
       {children}
@@ -24,6 +25,7 @@ const VideoCards = ({ children, density, data }: Props) => {
             key={item.id}
             style={{ height: `${density === 4 ? 30 : 60}vh` }}
             data={data}
+            likeFunc={likeFunc}
           />
         ))}
       </div>

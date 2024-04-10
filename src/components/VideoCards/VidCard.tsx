@@ -7,16 +7,27 @@ import { TopVideo } from '../../types/topUsers'
 import moment from 'moment'
 import { motion } from 'framer-motion'
 import { useAppDispatch } from '../../app/hooks'
-import { setPlayerModal, setPlayerVideos } from '../../features/videoSlice'
+import { openPlayerLock, setPlayerModal, setPlayerVideos } from '../../features/videoSlice'
+import axios from 'axios'
 
 type Props = {
   style: any
   info: TopVideo, 
-  data: TopVideo[]
+  data: TopVideo[],
+  likeFunc:any
 }
-const Card = ({ style, info, data }: Props) => {
+const Card = ({ style, info, data, likeFunc }: Props) => {
   const dispatch = useAppDispatch()
-  
+  const handleLike = async (id:number) => {
+    try {
+      const res = await axios.put(`/api/videos/${id}/like`,{
+        withCredentials: true
+      })
+      dispatch(likeFunc({id: id, like: res.data.likeNum}))
+    } catch (error) {
+      console.log(error);
+    }
+  }
   return (
     <div  className={`${styles.cardContain}`} style={style}>
       <div  className={styles.btn}>
@@ -26,6 +37,7 @@ const Card = ({ style, info, data }: Props) => {
       <img onClick={()=> {dispatch(
         setPlayerModal())
         dispatch(setPlayerVideos(data))
+        dispatch(openPlayerLock("pinned"))
       }} src={info.image_path} alt='' />
       <motion.div
         initial={{ y: 38 }}
@@ -43,7 +55,7 @@ const Card = ({ style, info, data }: Props) => {
               {info.view_count}
             </span>
             <span>
-              <LikeBtn /> {info.like_count}
+              <LikeBtn onClick={() => handleLike(info.id)} /> {info.like_count}
             </span>
             <span>
               <FiDownload size={23} /> {info.download_count}

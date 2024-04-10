@@ -6,6 +6,7 @@ import { TopVideo } from "../types/topUsers";
 const initialState:any = {
     data: [],
     playerModal: false,
+    lockation: ""
 }
 
 
@@ -17,6 +18,9 @@ const playerSlice = createSlice({
         setPlayerModal: (state) => {
             state.playerModal = !state.playerModal
         },
+        openPlayerLock:(state, action) => {
+            state.lockation =action.payload
+        },
         setPlayerVideos: (state, action) => {
             state.data = action.payload 
         },
@@ -27,9 +31,10 @@ const playerSlice = createSlice({
     }
 }) 
 
-export const {setPlayerModal, setPlayerVideos, setLikeVideo} = playerSlice.actions
+export const {setPlayerModal, setPlayerVideos, setLikeVideo, openPlayerLock} = playerSlice.actions
 
 export default playerSlice.reducer
 
 export const SelectPlayerModal = (state:RootState) => state.player.playerModal
 export const VideoData = (state:RootState) => state.player.data
+export const SlctPlayerOpenLock = (state:RootState) => state.player.lockation

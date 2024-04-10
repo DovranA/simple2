@@ -4,7 +4,7 @@ import Slider from "./components/slider/Slider";
 import styles from "./home.module.scss";
 import ThinContainer from "../../components/ThinContainer";
 import { useEffect } from "react";
-import { SelectHomeData, mainPageFetch } from "../../features/homeSlice";
+import { SelectHomeData, mainPageFetch, setPinnedLike } from "../../features/homeSlice";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 const Home = () => {
   const dispatch = useAppDispatch();
@@ -50,7 +50,7 @@ const Home = () => {
         link="videos"
       />
 
-      <Pinned data={data.pinnedVideos} />
+      <Pinned likeFunc={setPinnedLike} data={data.pinnedVideos} />
 
       {/* {true ? <Player /> : null} */}
     </div>

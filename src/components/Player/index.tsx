@@ -16,8 +16,9 @@ import { img1 } from '../../assets'
 import { GoScreenFull } from 'react-icons/go'
 import Video from './Video/Video'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
-import { VideoData, setLikeVideo, setPlayerModal, setPlayerVideos } from '../../features/videoSlice'
+import { SlctPlayerOpenLock, VideoData, setLikeVideo, setPlayerModal, setPlayerVideos } from '../../features/videoSlice'
 import axios from 'axios'
+import { setPinnedLike } from '../../features/homeSlice'
 const Player = () => {
   const [current, setCurrent] = useState(0)
   const [rand, setRand] = useState(0)
@@ -25,11 +26,12 @@ const Player = () => {
   const [playing, setPalying] = useState(false)
   const [muted] = useState(false)
   const [volume] = useState(0.5)
+  const [like, setLike] = useState(false)
   const playerRef = useRef<HTMLDivElement>(null)
   const videospace = useRef<HTMLDivElement>(null)
   const videosArr = useAppSelector(VideoData)
   const dispatch = useAppDispatch()
-
+  const openPlayerLock = useAppSelector(SlctPlayerOpenLock)
   const handleScroll = () => {
     if (playerRef.current) {
       const viewHeight = playerRef.current.clientHeight
@@ -79,12 +81,13 @@ const Player = () => {
       const res = await axios.put(`/api/videos/${id}/like`,{
         withCredentials: true
       })
-      console.log(res.data);
+      if(openPlayerLock === "pinned") {
+        dispatch(setPinnedLike({id: id, like:res.data.likeNum}))
+      }
       dispatch(setLikeVideo({id: id, like: res.data.likeNum}))
       
     } catch (error) {
       console.log(error);
-      
     }
   }
   return (
@@ -197,7 +200,7 @@ const Player = () => {
           <div className={styles.someContrs}>
             <span
               className={styles.icon}
-              onClick={() => {
+              onClick={() => {  
                 console.log('first')
               }}
               style={{ visibility: 'hidden' }}
