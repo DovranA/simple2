@@ -75,11 +75,11 @@ const Player = () => {
       inline: 'start',
     })
   }, [rand])
-const apiUrl = import.meta.env.VITE_API_PATH
+// const apiUrl = import.meta.env.VITE_API_PATH
 
   const handleLike = async (id:number) => {
     try {
-const res = await axios.put(apiUrl +`/api/videos/${id}/like`,{
+const res = await axios.put(`/api/videos/${id}/like`,{
         withCredentials: true
       })
       if(openPlayerLock === "pinned") {
@@ -123,7 +123,7 @@ const res = await axios.put(apiUrl +`/api/videos/${id}/like`,{
         <div className={`${styles.contrs} ${styles.left}`}>
           <span onClick={() => {
             dispatch(setPlayerModal())
-          dispatch(setPlayerVideos([]))
+          dispatch(setPlayerVideos({data:[], id: null}))
           }
             
             } className={`${styles.icon} ${styles.colse}`}>

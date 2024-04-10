@@ -9,7 +9,6 @@ import { motion } from 'framer-motion'
 import { useAppDispatch } from '../../app/hooks'
 import { openPlayerLock, setPlayerModal, setPlayerVideos } from '../../features/videoSlice'
 import axios from 'axios'
-const apiUrl = import.meta.env.VITE_API_PATH
 
 type Props = {
   style: any
@@ -21,10 +20,12 @@ const Card = ({ style, info, data, likeFunc }: Props) => {
   const dispatch = useAppDispatch()
   const handleLike = async (id:number) => {
     try {
-      const res = await axios.put(apiUrl+`/api/videos/${id}/like`,{
+      const res = await axios.put(`${import.meta.env.VITE_API_PATH}/api/videos/${id}/like`, {
         withCredentials: true
       })
       dispatch(likeFunc({id: id, like: res.data.likeNum}))
+      console.log(res);
+      
     } catch (error) {
       console.log(error);
     }
@@ -37,7 +38,7 @@ const Card = ({ style, info, data, likeFunc }: Props) => {
       </div>
       <img onClick={()=> {dispatch(
         setPlayerModal())
-        dispatch(setPlayerVideos(data))
+        dispatch(setPlayerVideos({data, id:info.id}))
         dispatch(openPlayerLock("pinned"))
       }} src={info.image_path} alt='' />
       <motion.div

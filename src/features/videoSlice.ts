@@ -22,7 +22,19 @@ const playerSlice = createSlice({
             state.lockation =action.payload
         },
         setPlayerVideos: (state, action) => {
-            state.data = action.payload 
+            if(action.payload?.id){
+                console.log("work")
+                const findVideo = action.payload.data.find((item:TopVideo)=>(
+                    item.id === action.payload.id
+                ))
+                const newVideo = action.payload.data.filter((item:TopVideo)=>(
+                    item.id!== action.payload.id
+                ))
+                state.data = [findVideo, ...newVideo]
+            }else{
+                console.log("work")
+                state.data = action.payload.data 
+            }
         },
         setLikeVideo: (state, action) => {
             let item = state.data.find((i:TopVideo) => i.id === action.payload.id)
