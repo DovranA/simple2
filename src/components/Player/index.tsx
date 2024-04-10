@@ -75,9 +75,11 @@ const Player = () => {
       inline: 'start',
     })
   }, [rand])
+const apiUrl = import.meta.env.VITE_API_PATH
+
   const handleLike = async (id:number) => {
     try {
-      const res = await axios.put(`https://dev.tmbiz.info/api/videos/${id}/like`,{
+const res = await axios.put(apiUrl +`/api/videos/${id}/like`,{
         withCredentials: true
       })
       if(openPlayerLock === "pinned") {

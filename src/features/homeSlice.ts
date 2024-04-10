@@ -45,9 +45,11 @@ const initialState:InitialHome = {
     },
 }
 
+const apiUrl = import.meta.env.VITE_API_PATH
+
 export const mainPageFetch = createAsyncThunk("homepage", async () => {
     try {
-        const res = await axios.get("https://dev.tmbiz.info/api/videos/mainpage")
+        const res = await axios.get(apiUrl+ "/api/videos/mainpage")
         return res.data
     } catch (error) {
         console.log(error);
