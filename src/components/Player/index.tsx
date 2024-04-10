@@ -16,7 +16,6 @@ import { img1 } from '../../assets'
 import { GoScreenFull } from 'react-icons/go'
 import Video from './Video/Video'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
-import { SelectHomeData } from '../../features/homeSlice'
 import { VideoData, setLikeVideo, setPlayerModal, setPlayerVideos } from '../../features/videoSlice'
 import axios from 'axios'
 const Player = () => {
@@ -24,12 +23,10 @@ const Player = () => {
   const [rand, setRand] = useState(0)
   const [fullScreen, setFullScreen] = useState(false)
   const [playing, setPalying] = useState(false)
-  const [muted, setMuted] = useState(false)
-  const [volume, setVolume] = useState(0.5)
+  const [muted] = useState(false)
+  const [volume] = useState(0.5)
   const playerRef = useRef<HTMLDivElement>(null)
   const videospace = useRef<HTMLDivElement>(null)
-  const selectVideos = useAppSelector(SelectHomeData)
-  // const [videosArr, setVideosArr] = useState<any>(selectVideos.pinnedVideos.detail)
   const videosArr = useAppSelector(VideoData)
   const dispatch = useAppDispatch()
 

@@ -1,8 +1,6 @@
 import { MdOutlinePlaylistAdd } from "react-icons/md";
 import styles from "./styles.module.scss";
-import { useState } from "react";
 const FilterNav = () => {
-  const [filter, setFilter] = useState(false);
   return (
     <div className={styles.navbar}>
       <h3>Brendlar (500700)</h3>

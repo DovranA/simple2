@@ -1,10 +1,7 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import {  createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../app/store";
 import { TopVideo } from "../types/topUsers";
 
-type InitalVideos = {
-    data: TopVideo[] | []
-}
 
 const initialState:any = {
     data: [],
