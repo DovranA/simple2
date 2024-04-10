@@ -6,6 +6,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     host:true,
+<<<<<<< HEAD
     // proxy: {
     //   "/api": {
     //     target: "https://dev.tmbiz.info",
@@ -14,5 +15,16 @@ export default defineConfig({
     //     ws: true,
     //   },
     // },
+=======
+    port:5000,
+    proxy: {
+      "^/api": {
+        target: "https://dev.tmbiz.info",
+        changeOrigin: true,
+        secure: false,
+        ws: true,
+      },
+    },
+>>>>>>> 1030c70 (added docker)
   }
 })
