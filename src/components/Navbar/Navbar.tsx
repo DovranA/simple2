@@ -28,6 +28,8 @@ const Navbar = () => {
   console.log(isPlayer)
   return (
     <nav className={styles.navbar}>
+      <div className={styles.navWrapp}>
+
       {modal && <Modal setModal={setModal} type={modalType} onOff={modal} />}
       {isPlayer ? <Player /> : null}
 
@@ -81,6 +83,7 @@ const Navbar = () => {
             </li>
           </motion.ul>
         )}
+      </div>
       </div>
     </nav>
   )

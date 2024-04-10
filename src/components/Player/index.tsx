@@ -140,13 +140,12 @@ const Player = () => {
           })}
         </div>
         <div className={`${styles.contrs} ${styles.left}`}>
-          <span
-            onClick={() => {
-              dispatch(setPlayerModal())
-              dispatch(setPlayerVideos([]))
-            }}
-            className={`${styles.icon} ${styles.colse}`}
-          >
+          <span onClick={() => {
+            dispatch(setPlayerModal())
+          dispatch(setPlayerVideos({data:[], id: null}))
+          }
+            
+            } className={`${styles.icon} ${styles.colse}`}>
             <IoClose size={40} />
           </span>
           <div className={styles.arrows}>

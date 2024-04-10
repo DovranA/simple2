@@ -24,13 +24,13 @@ const initialState: InitialRank = {
   errorVideo: null,
 }
 
-// const apiUrl = import.meta.env.VITE_API_PATH
+const apiUrl = import.meta.env.VITE_API_PATH
 
 export const handleUserFetch = createAsyncThunk(
   'users/topusers',
   async (type: string) => {
     try {
-      const res = await axios.get('/api/users/topusers?type=' + type, {
+      const res = await axios.get(apiUrl + '/api/users/topusers?type=' + type, {
         withCredentials: true,
       })
       return res.data
@@ -44,7 +44,7 @@ export const handleVideosFetch = createAsyncThunk(
   'videos/topvideos',
   async (type: string) => {
     try {
-      const res = await axios.get('/api/videos/topvideos?type=' + type, {
+      const res = await axios.get(apiUrl + '/api/videos/topvideos?type=' + type, {
         withCredentials: true,
       })
       return res.data

@@ -1,17 +1,22 @@
 .navbar {
-  width: 100vw;
-  height: 10vh;
+  width: 100%;
+  height: 9vh;
   background: white;
   box-shadow: 1px 1px 5px rgba(90, 90, 90, 0.361);
-  padding: 0 5vw;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   position: fixed;
   z-index: 4;
+  .navWrapp{
+    width: 1080px;
+    max-width: 1080px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   span {
     img {
-      width: 90px;
+      width: 80px;
     }
   }
   .searchDiv {
@@ -36,18 +41,17 @@
   .right {
     display: flex;
     align-items: center;
-    gap: 10px;
     position: relative;
+    gap: 25px;    
     .notificDiv {
-      font-size: 2.3rem;
-      margin: 0 50px;
+      font-size: 2rem;
       align-items: center;
       .count {
         background-color: red;
-        width: 12px;
-        height: 12px;
+        width: 10px;
+        height: 10px;
         color: white;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         position: absolute;
         margin-left: 20px;
         padding: 9px;
@@ -60,8 +64,8 @@
 
     .avatar {
       img {
-        width: 50px;
-        height: 50px;
+        width: 45px;
+        height: 45px;
         border-radius: 50%;
       }
     }
@@ -91,5 +95,5 @@
         }
       }
     }
-  }
+  }}
 }

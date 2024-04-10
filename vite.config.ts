@@ -17,4 +17,13 @@ export default defineConfig({
       },
     },
   },
+    host:true,
+    // proxy: {
+    //   "/api": {
+    //     target: "https://dev.tmbiz.info",
+    //     changeOrigin: true,
+    //     secure: false,
+    //   },
+    // },
+  }
 })

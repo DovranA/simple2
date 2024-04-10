@@ -6,6 +6,8 @@ import { IoIosArrowUp } from 'react-icons/io'
 const Footer = () => {
   return (
     <div className={styles.footer}>
+      <div className={styles.footerWrapp}>
+
       <div className={styles.upper}>
         <div className={styles.left}>
           <h1>TM BIZ</h1>
@@ -42,6 +44,8 @@ const Footer = () => {
         </div>
       </div>
     </div>
+    </div>
+
   )
 }
 export default Footer
