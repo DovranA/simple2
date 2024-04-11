@@ -1,8 +1,4 @@
-.home {
-  display: flex;
-  flex-direction: column;
-  padding: 12vh 5vw 5vh 5vw;
-  gap: 30px;
+
   .videoContainer {
     position: relative;
   }
@@ -16,10 +12,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.5); // Swipe alanı arka plan rengi
-    color: white; // Swipe alanı metin rengi
-    font-size: 24px; // Swipe alanı metin boyutu
-    opacity: 0.7; // Swipe alanı opaklığı
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white; 
+    font-size: 24px;
+    opacity: 0.7; 
   }
 
   .videoPlayer {
@@ -30,4 +26,3 @@
     display: flex;
     gap: 20px;
   }
-}
