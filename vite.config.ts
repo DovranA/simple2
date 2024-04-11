@@ -7,7 +7,6 @@ export default defineConfig({
   server: {
     host: true,
 
-    // port: 5000,
     proxy: {
       '^/api': {
         target: 'https://dev.tmbiz.info',
@@ -17,13 +16,4 @@ export default defineConfig({
       },
     },
   },
-    host:true,
-    // proxy: {
-    //   "/api": {
-    //     target: "https://dev.tmbiz.info",
-    //     changeOrigin: true,
-    //     secure: false,
-    //   },
-    // },
-  }
 })

@@ -61,6 +61,59 @@
         justify-content: center;
         align-items: center;
         gap: 20px;
+        .volume {
+          width: 50px;
+          height: 200px;
+          display: flex;
+          position: relative;
+          .range {
+            width: fit-content;
+            height: fit-content;
+            position: absolute;
+            z-index: 1;
+            left: -40px;
+            top: 60px;
+            rotate: -90deg;
+            z-index: 1;
+            .rangeInput {
+              -webkit-appearance: none;
+              appearance: none;
+              cursor: pointer;
+              outline: none;
+              border-radius: 15px;
+              height: 12px;
+              background-color: transparent;
+              &::-webkit-slider-runnable-track {
+                height: 15px;
+                background-color: transparent;
+                border-radius: 16px;
+              }
+              &::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                appearance: none;
+                height: 15px;
+                width: 15px;
+                background-color: #000;
+                border-radius: 50%;
+                border: none;
+                transition: 0.2s ease-in-out;
+                opacity: 0;
+              }
+              &::-moz-range-thumb {
+                height: 15px;
+                width: 15px;
+                background-color: #000;
+                border-radius: 50%;
+                border: none;
+                transition: 0.2s ease-in-out;
+              }
+            }
+          }
+          .icon {
+            position: absolute;
+            bottom: 0;
+          }
+        }
       }
       .actions {
         color: #fff;

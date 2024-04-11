@@ -23,7 +23,7 @@ const Home = () => {
     return <h1>Loading</h1>
   }
   return (
-    <div className="container">
+    <div className='container'>
       <Slider image={data.banner.images} />
       <ThinContainer
         img={data.topusers.image}
