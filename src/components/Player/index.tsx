@@ -74,6 +74,10 @@ const Player = () => {
         e.preventDefault()
         setMuted((prev) => !prev)
         break
+      case 'KeyL':
+        e.preventDefault()
+        handleLike(videosArr[current].id)
+        break
     }
   }
   useEffect(() => {
