@@ -4,8 +4,7 @@
   .cards {
     margin-top: 1.5rem;
     display: grid;
-
-    gap: 40px;
+    gap: 20px;
     // .bigCard {
     //   height: 20vh;
     //   border: 1px solid black;
@@ -14,21 +13,22 @@
   }
 }
 
-@media screen and (min-width: 1280px) {
-  .cards {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-@media screen and (min-width: 1920px) {
-  .cards {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
+  // @media screen and (min-width: 1280px) {
+  //   .cards {
+  //     grid-template-columns: repeat(3, minmax(0, 1fr));
+  //   }
+  // }
+  // @media screen and (min-width: 1920px) {
+  //   .cards {
+  //     grid-template-columns: repeat(2, minmax(0, 1fr));
+  //   }
+  // }
 
 nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  
   div {
     display: flex;
     gap: 8px;
@@ -47,93 +47,189 @@ nav {
   border: 1px solid black;
   padding: 0 15px;
 }
-.cardContain {
-  height: 30vh;
-  border: 1px solid black;
-  border-radius: 0.5rem;
-  overflow: hidden;
-  position: relative;
-  span {
-    height: 100%;
-    width: 100%;
-    img {
-      position: absolute;
-      width: 100%;
-      object-fit: cover;
-      object-position: center;
-      z-index: 0;
-    }
-  }
-  .btn {
-    right: 10px;
-    top: 10px;
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    overflow: hidden;
-    z-index: 1;
-    .blur {
-      border-radius: 50%;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(255, 255, 255, 0.3);
-      -webkit-backdrop-filter: blur(6px);
-      backdrop-filter: blur(6px);
-    }
-    .icon {
-      font-size: 1rem;
-      z-index: 1;
-      color: #fff;
-    }
-  }
-  .info {
-    color: #fff;
-    bottom: 0;
-    position: absolute;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 15px 0;
-    gap: 5px;
-    z-index: 1;
-    p {
-      font-size: 1.7rem;
-      font-weight: 600;
-      padding: 0 15px;
-    }
-    div {
-      display: flex;
-      width: 100%;
-      overflow: hidden;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 15px;
+// .cardContain1 {
+//   height: 25vh;
+//   border: 1px solid black;
+//   border-radius: 0.5rem;
+//   overflow: hidden;
+//   position: relative;
+  // span {
+  //   height: 100%;
+  //   width: 100%;
+    // img {
+    //   position: absolute;
+    //   width: 100%;
+    //   object-fit: cover;
+    //   object-position: center;
+    //   z-index: 0;
+    // }
+  // }
+//   .btn {
+//     right: 10px;
+//     top: 10px;
+//     position: absolute;
+//     width: 25px;
+//     height: 25px;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     border-radius: 50%;
+//     overflow: hidden;
+//     z-index: 1;
+//     .blur {
+//       border-radius: 50%;
+//       position: absolute;
+//       width: 100%;
+//       height: 100%;
+//       background-color: rgba(255, 255, 255, 0.3);
+//       -webkit-backdrop-filter: blur(6px);
+//       backdrop-filter: blur(6px);
+//     }
+//     .icon {
+//       font-size: 1rem;
+//       z-index: 1;
+//       color: #fff;
+//     }
+//   }
+//   .info {
+//     color: #fff;
+//     bottom: 0;
+//     position: absolute;
+//     width: 100%;
+//     display: flex;
+//     flex-direction: column;
+//     padding: 15px 0;
+//     gap: 5px;
+//     z-index: 1;
+//     p {
+//       font-size: 1.7rem;
+//       font-weight: 600;
+//       padding: 0 15px;
+//     }
+//     div {
+//       display: flex;
+//       width: 100%;
+//       overflow: hidden;
+//       justify-content: space-between;
+//       align-items: center;
+//       padding: 0 15px;
 
-      .counts {
-        display: flex;
-        gap: 5px;
-      }
-      .counts span {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 5px;
-      }
-    }
-    .bg {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.3);
-      -webkit-backdrop-filter: blur(6px);
-      backdrop-filter: blur(6px);
-      z-index: -1;
-      bottom: 0;
+//       .counts {
+//         display: flex;
+//         gap: 5px;
+//       }
+//       .counts span {
+//         display: flex;
+//         flex-direction: row;
+//         align-items: center;
+//         gap: 5px;
+//       }
+//     }
+//     .bg {
+//       position: absolute;
+//       width: 100%;
+//       height: 100%;
+//       background-color: rgba(0, 0, 0, 0.3);
+//       -webkit-backdrop-filter: blur(6px);
+//       backdrop-filter: blur(6px);
+//       z-index: -1;
+//       bottom: 0;
+//     }
+//   }
+// }
+
+.cardContain4{
+  width: 250px;
+  height: 200px;
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.cardContain2{
+  width: 500px;
+  height: 300px;
+  border: 1px solid red;
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+  .info{
+
+
+    .about{
+      flex-direction: row;
+      align-items: center;
     }
   }
+}
+.playBtn {
+  background: #e7e7e7;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  z-index: 1;
+}
+
+.bgImage{
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: absolute;
+  z-index: 0;
+  span{
+    width: 100%;
+    height: 100%;
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+  .info {
+         color: #fff;
+         bottom: 0;
+         position: absolute;
+         width: 100%;
+         display: flex;
+         flex-direction: column;
+         padding: 15px 0 8px 0;
+         gap: 5px;
+         z-index: 1;
+         background-color: rgba(0, 0, 0, 0.3);
+         -webkit-backdrop-filter: blur(6px);
+        backdrop-filter: blur(6px);
+         p {
+           font-size: 1.4rem;
+           font-weight: 600;
+           padding: 0 10px 0 10px;
+         }
+        .about{
+           display: flex;
+           width: 100%;
+           overflow: hidden;
+           padding: 5px 10px;
+           flex-direction: column;
+           gap: 5px;
+           .counts{
+             display: flex;
+             gap: 5px;
+           }
+           .counts span {
+             display: flex;
+             flex-direction: row;
+             align-items: center;
+             gap: 5px;
+           }
+         }
 }

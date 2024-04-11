@@ -1,6 +1,6 @@
 .container {
   width: 100%;
-  height: 50vh;
+  height: 45vh;
   overflow: hidden;
   nav {
     display: flex;
@@ -21,7 +21,7 @@
     align-items: center;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
-    column-gap: 40px;
+    column-gap: 26px;
     &::-webkit-scrollbar {
       display: none;
     }
@@ -29,7 +29,7 @@
 }
 
 .card {
-  width: 300px;
+  width: 250px;
   height: 95%;
   display: flex;
   flex: auto;
@@ -57,5 +57,16 @@
     border-radius: 0.6rem;
     object-fit: cover;
     z-index: 1;
+  }
+}
+// @media screen and (min-width: 1280px) {
+//   .cards{
+//     background: #000;
+//   }
+// }
+
+@media screen and (min-width: 1920px) {
+  .container{
+    height: 40vh;
   }
 }
