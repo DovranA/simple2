@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { RootState } from '../app/store'
-import { video } from '../types/global'
+import { video, videos } from '../types/global'
 
-const initialState: any = {
+const initialState: videos = {
   data: [],
   playerModal: false,
   lockation: '',
@@ -32,7 +32,7 @@ const playerSlice = createSlice({
     },
     setLikeVideo: (state, action) => {
       let item = state.data.find((i: video) => i.id === action.payload.id)
-      item.like_count = action.payload.like
+      if (item) item.like_count = action.payload.like
     },
   },
 })

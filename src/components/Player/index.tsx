@@ -6,7 +6,7 @@ import {
   IoIosArrowUp,
   IoIosInformationCircleOutline,
 } from 'react-icons/io'
-import { MdScreenRotation, MdVolumeUp } from 'react-icons/md'
+import { MdScreenRotation } from 'react-icons/md'
 import { CiDark, CiSearch } from 'react-icons/ci'
 import { TiArrowUpOutline } from 'react-icons/ti'
 import LikeBtn from '../Like/LikeBtn'
@@ -25,6 +25,7 @@ import {
 } from '../../features/videoSlice'
 import axios from 'axios'
 import { setPinnedLike } from '../../features/homeSlice'
+import { ImVolumeLow, ImVolumeMedium, ImVolumeMute2 } from 'react-icons/im'
 const Player = () => {
   const [current, setCurrent] = useState(0)
   const [rand, setRand] = useState(0)
@@ -32,7 +33,7 @@ const Player = () => {
   const [playing, setPalying] = useState(true)
   const [muted, setMuted] = useState(false)
   const [spin, setSpin] = useState<number>(0)
-  const [volume] = useState(0.5)
+  const [volume, setVolume] = useState(0.6)
   const playerRef = useRef<HTMLDivElement>(null)
   const videospace = useRef<HTMLDivElement>(null)
   const videosArr = useAppSelector(VideoData)
@@ -81,6 +82,7 @@ const Player = () => {
     videospace.current?.focus()
     document.body.style.overflow = 'hidden'
     playerRef.current?.addEventListener('scrollend', handleScroll, false)
+
     return () => {
       document.body.style.overflow = 'auto'
       playerRef.current?.removeEventListener('scrollend', handleScroll)
@@ -143,7 +145,7 @@ const Player = () => {
           <span
             onClick={() => {
               dispatch(setPlayerModal())
-              dispatch(setPlayerVideos([]))
+              dispatch(setPlayerVideos({ data: [], id: null }))
             }}
             className={`${styles.icon} ${styles.colse}`}
           >
@@ -174,13 +176,48 @@ const Player = () => {
           </div>
           <div className={styles.someContrs}>
             <div className={styles.volume}>
+              <div className={styles.range}>
+                <input
+                  type='range'
+                  id='range2'
+                  className={styles.rangeInput}
+                  style={{
+                    background: `linear-gradient(to right, #000 ${
+                      volume * 100
+                    }%, #fff ${volume * 100}%)`,
+                  }}
+                  max={1}
+                  value={volume}
+                  min={0}
+                  step={0.1}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                    setVolume(Number(e.target.value))
+                  }}
+                />
+              </div>
+              {/* <input
+                type='range'
+                max={1}
+                value={volume}
+                min={0}
+                step={0.1}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                  setVolume(Number(e.target.value))
+                }}
+              /> */}
               <span
                 className={styles.icon}
                 onClick={() => {
                   setMuted((prev) => !prev)
                 }}
               >
-                <MdVolumeUp size={40} />
+                {volume > 0.5 && !muted ? (
+                  <ImVolumeMedium size={30} />
+                ) : volume === 0 || muted ? (
+                  <ImVolumeMute2 size={30} />
+                ) : (
+                  <ImVolumeLow size={30} />
+                )}
               </span>
             </div>
             <span className={styles.icon}>
@@ -208,7 +245,7 @@ const Player = () => {
               onClick={() => {
                 navigator.clipboard
                   .writeText(
-                    `http://localhost:5173/videos/${300}?share=${'asjjbdashdbahdbajs'}`
+                    `http://localhost:5173/videos/${videosArr[current].id}?share=${videosArr[current].share_token}`
                   )
                   .then(() => {
                     console.log('copyed')
@@ -232,7 +269,11 @@ const Player = () => {
               onClick={() => {
                 console.log('first')
               }}
-              style={{ visibility: 'hidden' }}
+              style={{
+                visibility: videosArr[current].is_vertical
+                  ? 'hidden'
+                  : 'visible',
+              }}
             >
               <MdScreenRotation size={40} />
             </span>

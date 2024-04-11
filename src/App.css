@@ -50,9 +50,11 @@
 .container {
   display: flex;
   flex-direction: column;
-  padding: 12vh 5vw 5vh 5vw;
+  padding: 10.5vh 0 5vh 0;
   gap: 30px;
   background-color: var(--background);
+  max-width: 1080px;
+  margin: 0 auto;
 }
 
 a {

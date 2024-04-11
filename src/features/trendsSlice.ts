@@ -19,12 +19,16 @@ type trendsFetch = {
   startfrom: number
   limit: number
 }
+
+const apiUrl = import.meta.env.VITE_API_PATH
+
+
 export const trendsPageFetch = createAsyncThunk(
   'trends',
   async ({ by, startfrom, limit }: trendsFetch) => {
     try {
       const res = await axios.get(
-        `/api/videos/trends?by=${by}&startfrom=${startfrom}&limit=${limit}`,
+        `${apiUrl}/api/videos/trends?by=${by}&startfrom=${startfrom}&limit=${limit}`,
         {
           withCredentials: true,
         }

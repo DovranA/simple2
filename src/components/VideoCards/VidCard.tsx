@@ -23,10 +23,12 @@ type Props = {
   likeFunc?: any
 }
 const Card = ({ style, info, data, likeFunc }: Props) => {
+const apiUrl = import.meta.env.VITE_API_PATH
+
   const dispatch = useAppDispatch()
   const handleLike = async (id: number) => {
     try {
-      const res = await axios.put(`/api/videos/${id}/like`, {
+      const res = await axios.put(apiUrl+ `/api/videos/${id}/like`, {
         withCredentials: true,
       })
       dispatch(likeFunc({ id: id, like: res.data.likeNum }))

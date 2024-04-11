@@ -1,10 +1,13 @@
 .footer {
   width: 100vw;
   background: #000;
-  padding: 3rem 5vw;
+  padding: 3rem 0;
   color: white;
   border-bottom: 2px solid rgb(176, 176, 176);
-
+.footerWrapp{
+  width: 1080px;
+  max-width: 1080px;
+  margin: 0 auto;
   .upper {
     display: flex;
     align-items: center;
@@ -63,4 +66,6 @@
       }
     }
   }
+}
+
 }

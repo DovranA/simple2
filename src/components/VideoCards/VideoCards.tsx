@@ -23,7 +23,7 @@ const VideoCards = ({ children, density, data, likeFunc }: Props) => {
           <Card
             info={item}
             key={item.id}
-            style={{ height: `${density === 4 ? 30 : 60}vh` }}
+            style={{ height: `${density === 4 ? 200 : 400}px` }}
             data={data}
             likeFunc={likeFunc}
           />
